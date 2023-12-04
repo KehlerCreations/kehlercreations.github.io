@@ -12,7 +12,7 @@
 }
 
 * {
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
     color: white;
 
     margin: 0;
@@ -30,10 +30,6 @@ body {
 
 
 /*-- HEADER --*/
-
-.main-header * {
-    /* border: 1px solid red; */
-}
 
 .main-header {
     display: grid;
