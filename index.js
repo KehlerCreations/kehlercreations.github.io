@@ -1,7 +1,7 @@
 let header = document.querySelector("header");
 header.innerHTML = `
 <span>
-    <a href="/"><img src="Images/Kehler Creations Logo Medium Circle.png"></a>
+    <a href="/" aria-label="Link to homepage"><img src="Images/Kehler Creations Logo Medium Circle.png" alt="Kehler Creations logotype"></a>
 </span>
 <a class="header-title" href="/"><h1 class="header-title">ELLIOT KEHLER</h1></a>
 <nav class="navigation navigation-pages">
