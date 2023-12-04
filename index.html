@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Dialog Category Manager</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="code_main.js"></script>
+    </head>
+
+    <body>
+        
+        <!-- Create a new project -->
+        <section class="content content-newProject hidden">
+            <div>
+                <span>Project Name: </span>
+                <input class="newProject-ProjectName" type="text">
+                <button id="content-newProject-buttonCreate">Create</button>
+            </div>
+        </section>
+
+        <!-- While in a project -->
+        <section class="content content-main hidden">
+
+            <ul id="character-list"></ul>
+            <ul id="dialog-list"></ul>
+            <div>
+                <input type="text" id="dialog-script-name">
+                <br>
+                <textarea id="dialog-script"></textarea>
+            </div>
+
+        </section>
+        
+        <!-- System buttons, change through JavaScript -->
+        <section class="system">
+            <div class="system-segment">
+                <button class="button" id="system-button-new-project">New project</button>
+            </div>
+            <div class="system-segment">
+                <span>Load project: </span>
+                <input type="file" id="system-button-load-project">
+            </div>
+        </section>
+    </body>
+</html>
