@@ -2,7 +2,9 @@
 
 <html>
     <head>
-        <title>My 3D artwork</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D Artwork</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="styles_3d.css">
         <script defer src="index.js"></script>
@@ -10,7 +12,42 @@
     </head>
     <body>
         <header class="main-header">
+            <!-- Load header through Javascript -->
         </header>
+
+        <!--3D ARTWORK-->
+        <section class="content">
+            <h2 class="section-title">3D ARTWORK</h2>
+            <div class="showreel">
+                <div>
+                    <img class="showreel-image" src="Images/Snowman Render.jpg" onclick="showreelDescriptionToggle(0);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Kitchen Render.jpg" onclick="showreelDescriptionToggle(1);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Guitar Render.jpg" onclick="showreelDescriptionToggle(2);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Knife Render.jpg" onclick="showreelDescriptionToggle(3);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Tire in Mud Render.jpg" onclick="showreelDescriptionToggle(4);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Bottles Render.jpg" onclick="showreelDescriptionToggle(5);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Furniture Render.jpg" onclick="showreelDescriptionToggle(6);">
+                </div>
+                <div>
+                    <img class="showreel-image" src="Images/Die Render.jpg" onclick="showreelDescriptionToggle(7);">
+                </div>
+            </div>
+            <div class="information-base">
+                <p class="information">Having worked with 3D modeling since 2016, I am self-taught and proficient in a variety of methods. I especially love working with lighting and rendering. Hard-surface modeling is what I do best. Most of my models are made with Autodesk Maya.</p>
+            </div>
+        </section>
 
         <section class="showcase-main">
             <!-- <nav class="nav-3d-main">
@@ -20,7 +57,8 @@
                     <li onclick="SelectWindow('.knife');">KNIFE</li>
                 </ul>
             </nav> -->
-
+            
+            
             <div class="showcase-container">
                 <div class="kitchen hidden-3d showcase-item">
                     <!-- <h2>THE KITCHEN</h2> -->
