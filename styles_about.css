@@ -1,0 +1,14 @@
+.personal-presentation {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto; margin-right: auto;
+    width: 70vw;
+}
+
+.personal-presentation p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
