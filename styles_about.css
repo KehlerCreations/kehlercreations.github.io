@@ -4,6 +4,8 @@
     justify-content: center;
     align-items: center;
     margin-left: auto; margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 175px;
     width: 70vw;
 }
 
@@ -11,4 +13,8 @@
     text-align: left;
     margin: 0;
     padding: 0;
+}
+
+.presentation-information-highlight {
+    color: rgb(255, 255, 255);
 }

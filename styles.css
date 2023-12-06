@@ -124,6 +124,15 @@ a:focus::after {
     color: var(--ColorTextWhite);
 }
 
+.section-subtitle {
+    font-size: 1.5em;
+    letter-spacing: .1em;
+
+    margin-top: 25px;
+    margin-bottom: 40px;
+    color: var(--ColorTextLightGray);
+}
+
 .information-base {
     margin: 0;
     padding: 0;
@@ -243,10 +252,6 @@ a:focus::after {
     justify-content: center;
     padding: 50px;
     background-color: var(--ColorBackgroundGray);
-}
-
-.contact-link-link {
-    border: 1px solid red;
 }
 
 .contact-link-image {
