@@ -18,3 +18,7 @@
 .presentation-information-highlight {
     color: rgb(255, 255, 255);
 }
+
+.personal-presentation p.text-justify {
+    text-align: justify;
+}
