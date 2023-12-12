@@ -203,6 +203,78 @@ a:focus::after {
     opacity: 0;
 }
 
+/*-- GAME DESIGN --*/
+
+.gamedesign-main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    width: 80vw;
+
+    /* background-color: rgba(255, 255, 255, 0.05); */
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ), url("Images/AST\ Shade\ Street.jpg");
+    
+    border-radius: 50px;
+}
+
+.gamedesign-category {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70vw;
+
+    background-color: rgba(255, 255, 255, 0.095);
+    backdrop-filter: blur(20px);
+
+    border-radius: 50px;
+}
+
+.gamedesign-category-information {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+}
+
+.gamedesign-category-image {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+.gamedesign-category-information h3 {
+    margin-bottom: 50px;
+
+    font-size: 2rem;
+    letter-spacing: .2rem;
+
+    /* text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); */
+}
+
+.gamedesign-category-information ul {
+    text-align: left;
+
+    list-style: none;
+}
+
+.gamedesign-category-information ul li {
+    margin-bottom: 17px;
+
+    letter-spacing: .035rem;
+    line-height: 1.5rem;
+}
+
 /*-- MUSIC --*/
 
 .music {
@@ -229,6 +301,7 @@ a:focus::after {
 .musictrack-description {
     margin: 25px;
     color: var(--ColorTextGray);
+    width: 400px;
 }
 
 /*CONTACT*/
