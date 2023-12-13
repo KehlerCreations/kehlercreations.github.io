@@ -213,7 +213,8 @@ a:focus::after {
     padding-top: 75px;
     padding-bottom: 75px;
 
-    width: 80vw;
+    width: 1200px;
+    /* max-width: 80vw; */
 
     /* background-color: rgba(255, 255, 255, 0.05); */
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ), url("Images/AST\ Shade\ Street.jpg");
@@ -229,7 +230,7 @@ a:focus::after {
     padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 70vw;
+    max-width: 85%;
 
     background-color: rgba(255, 255, 255, 0.095);
     backdrop-filter: blur(20px);
@@ -240,7 +241,7 @@ a:focus::after {
 .gamedesign-category-information {
     margin-left: auto;
     margin-right: auto;
-    width: 30vw;
+    width: 440px;
 }
 
 .gamedesign-category-image {
