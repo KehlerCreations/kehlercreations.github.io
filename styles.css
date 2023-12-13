@@ -65,16 +65,16 @@ body {
     }
 }
 
-.navigation-pages {
+.navigation-pages.desktop {
     text-align: center;
 }
 
-.navigation li {
+.navigation.desktop li {
     display: inline;
     margin: 5px 5px;
 }
 
-.main-navigation-buttons {
+.main-navigation-buttons.desktop {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -90,7 +90,7 @@ body {
     /* border: 1px solid red; */
 }
 
-.navigation .main-navigation-button::after {
+.navigation .main-navigation-button.desktop::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -241,7 +241,7 @@ a:focus::after {
 .gamedesign-category-information {
     margin-left: auto;
     margin-right: auto;
-    width: 440px;
+    width: 480px;
 }
 
 .gamedesign-category-image {
@@ -350,3 +350,54 @@ a:focus::after {
     color: black;
 }
 
+/*-- MOBILE CHANGES --*/
+
+@media (max-width: 800px) {
+
+    /*NAVIGATION*/
+    .desktop {
+        display: none;
+    }
+
+    #navigation-folderButton-mobile {
+        width: 30px;
+        height: 30px;
+        
+        content: "";
+        opacity: 1;
+        background-color: rgb(255, 0, 0);
+    }
+
+    .main-navigation-buttons-mobile {
+        z-index: 1000;
+        display: none; /*Activate when tapping on the folder button*/
+        position: fixed;
+        top: 0;
+        bottom: 1;
+        right: -300px;
+        left: 1;
+        width: 200px;
+
+        list-style: none;
+        background-color: rgba(0, 0, 0, 0.185);
+        backdrop-filter: blur(5px);
+
+        transition: 2s right;
+    }
+
+    .main-navigation-buttons-mobile.animate-reveal {
+        right: 0px;
+    }
+
+    .main-navigation-buttons-mobile li {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .mobile {
+        display: none;
+    }
+}
