@@ -16,7 +16,7 @@ header.innerHTML = `
     </ul>
 </nav>
 <nav class="navigation navigation-pages mobile">
-    <ul class="main-navigation-buttons-mobile">
+    <ul class="main-navigation-buttons mobile">
         <li><a class="main-navigation-button mobile" href="/">HOME</a></li>
         <li><a class="main-navigation-button mobile" href="game-design.html">GAME DESIGN</a></li>
         <li><a class="main-navigation-button mobile" href="3d.html">3D DESIGN</a></li>
@@ -24,14 +24,24 @@ header.innerHTML = `
         <li><a class="main-navigation-button mobile" href="about.html">ABOUT ME</a></li>
         <li><a class="main-navigation-button mobile" href="contact.html">CONTACT</a></li>
     </ul>
-    <div id="navigation-folderButton-mobile"></div>
+    <div id="navigation-folderButton-mobile">
+        <div class="navigation-folderButton-mobile-component"></div>
+        <div class="navigation-folderButton-mobile-component"></div>
+        <div class="navigation-folderButton-mobile-component"></div>
+    </div>
 </nav>
 `;
 
 document.querySelector("#navigation-folderButton-mobile").addEventListener("click", function() {
-    let ID = document.getElementsByClassName("main-navigation-buttons-mobile")[0];
-    ID.style.display = "block";
-    ID.classList.add("animate-reveal");
+    let ID = document.getElementsByClassName("main-navigation-buttons mobile")[0];
+    let navDisplay = ID.style.display;
+    if(navDisplay == "block") {
+        ID.style.display = "none";
+    } else {
+        ID.style.display = "block";
+        ID.classList.add("animate-reveal");
+    }
+    
 });
 
 /* -- FOOTER -- */
