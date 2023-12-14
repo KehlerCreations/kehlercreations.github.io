@@ -51,19 +51,14 @@ body {
 }
 
 .main-header img {
-    width: 100px;
+    /* width: 100px; */
+    width: clamp(0px, 10vw, 100px);
 }
 
 .main-header .header-title {
     display: block;
-    font-size: 4rem;
+    font-size: clamp(0px, 5vw, 4rem);
     text-decoration: none;
-}
-
-@media (max-width: 1000px) {
-    .main-header .header-title {
-        font-size: 2rem;
-    }
 }
 
 .navigation-pages.desktop {
@@ -215,7 +210,7 @@ a:focus::after {
     padding-bottom: 75px;
 
     width: 1200px;
-    /* max-width: 80vw; */
+    max-width: 80vw;
 
     /* background-color: rgba(255, 255, 255, 0.05); */
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ), url("Images/AST\ Shade\ Street.jpg");
@@ -237,12 +232,15 @@ a:focus::after {
     backdrop-filter: blur(20px);
 
     border-radius: 50px;
+
+    
 }
 
 .gamedesign-category-information {
     margin-left: auto;
     margin-right: auto;
-    width: 480px;
+    width: clamp(1px, 100%, 2000px);
+    /* border: 1px solid blue; */
 }
 
 .gamedesign-category-image {
@@ -258,7 +256,7 @@ a:focus::after {
 .gamedesign-category-information h3 {
     margin-bottom: 50px;
 
-    font-size: 2rem;
+    font-size: clamp(5px, 10vw, 2rem);
     letter-spacing: .2rem;
 
     /* border: 1px solid red; */
@@ -270,13 +268,18 @@ a:focus::after {
     text-align: left;
 
     list-style: none;
+
+    /* border: 1px solid red; */
 }
 
 .gamedesign-category-information ul li {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 17px;
 
+    font-size: clamp(2px, 5vw, 1rem);
     letter-spacing: .035rem;
-    line-height: 1.5rem;
+    line-height: clamp(1rem, 7vw, 1.5rem);
 }
 
 /*-- MUSIC --*/
@@ -317,6 +320,7 @@ a:focus::after {
 
 .contact-mail {
     text-decoration: none;
+    font-size: clamp(0px, 3vw, 1rem);
 }
 
 .contact-mail:hover {
@@ -326,14 +330,13 @@ a:focus::after {
 .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* flex-wrap: wrap; */
     justify-content: center;
     padding: 50px;
     background-color: var(--ColorBackgroundGray);
 }
 
 .contact-link-image {
-    width: 50px;
+    width: clamp(5px, 10vw, 50px);
     border-radius: 100%;
     margin: 10px;
 }
@@ -353,8 +356,11 @@ a:focus::after {
 @media (max-width: 1470px) {
     
     body {
-        position: absolute;
+        /* position: absolute; */
     }
+
+    /* HEADER */
+    
 
     /* NAVIGATION */
     .desktop {
@@ -444,6 +450,8 @@ a:focus::after {
         width: 100%;
         height: 100%;
     }
+
+    /* FOOTER */
 }
 
 @media (min-width: 1471px) {
