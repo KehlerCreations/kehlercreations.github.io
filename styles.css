@@ -20,6 +20,7 @@
 }
 
 body {
+    position: static;
     background-color: var(--ColorBackgroundDarkGray);
     min-height: 100vh;
 }
@@ -350,6 +351,10 @@ a:focus::after {
 /*-- MOBILE CHANGES --*/
 
 @media (max-width: 1470px) {
+    
+    body {
+        position: absolute;
+    }
 
     /* NAVIGATION */
     .desktop {
@@ -400,11 +405,12 @@ a:focus::after {
         background-color: rgba(0, 0, 0, 0.185);
         backdrop-filter: blur(5px);
 
-        transition: 2s right;
+        transition: right 2s;
     }
 
     .main-navigation-buttons.mobile.animate-reveal {
         right: 0px;
+        transition: right 2;
     }
 
     .main-navigation-buttons.mobile li {

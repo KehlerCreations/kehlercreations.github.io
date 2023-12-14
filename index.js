@@ -55,8 +55,6 @@ document.querySelector("#navigation-folderButton-mobile").addEventListener("clic
         ID.style.display = "block";
         ID.classList.add("animate-reveal");
         
-        // document.getElementsByClassName("main-navigation-button mobile")[0].classList.add("scale-animated");
-
         /// Change folder symbol
         let folderID = document.getElementById("navigation-folderButton-mobile");
         folderID.style.top = "16px";
