@@ -386,9 +386,9 @@ a:focus::after {
         
         content: "";
         opacity: 1;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
 
-        border: 1px solid black;
+        border: 1px solid rgb(255, 255, 255);
     }
 
     .main-navigation-buttons.mobile {
