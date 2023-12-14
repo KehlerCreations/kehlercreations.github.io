@@ -382,6 +382,8 @@ a:focus::after {
         content: "";
         opacity: 1;
         background-color: rgb(255, 255, 255);
+
+        border: 1px solid black;
     }
 
     .main-navigation-buttons.mobile {
@@ -408,6 +410,14 @@ a:focus::after {
     .main-navigation-buttons.mobile li {
         margin-top: 50px;
         margin-bottom: 50px;
+        font-size: 2rem;
+
+        transition: font-size 0s;
+    }
+
+    .scale-animated {
+        transition: font-size 5s;
+        font-size: 4rem;
     }
 
     /* GAME DESIGN */
