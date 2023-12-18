@@ -170,7 +170,7 @@ a:focus::after {
 .showreel {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
@@ -197,6 +197,10 @@ a:focus::after {
 
 .hidden {
     opacity: 0;
+}
+
+.no-display {
+    display: none;
 }
 
 /*-- GAME DESIGN --*/
@@ -232,8 +236,6 @@ a:focus::after {
     backdrop-filter: blur(20px);
 
     border-radius: 50px;
-
-    
 }
 
 .gamedesign-category-information {
@@ -281,6 +283,39 @@ a:focus::after {
     letter-spacing: .035rem;
     line-height: clamp(1rem, 7vw, 1.5rem);
 }
+
+.gamedesign-category .image-browse {
+    position: absolute;
+    top: 150px;
+    left: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    
+    user-select: none;
+}
+
+.gamedesign-category .image-browse .left {
+    opacity: .25;
+
+    transition: opacity .15s;
+}
+
+.gamedesign-category .image-browse .right {
+    position: relative;
+    left: 381px;
+
+    opacity: .25;
+    transition: opacity .15s;
+}
+
+.gamedesign-category .image-browse .left:hover {
+    opacity: .8;
+}
+
+.gamedesign-category .image-browse .right:hover {
+    opacity: .8;
+}
+
 
 /*-- MUSIC --*/
 

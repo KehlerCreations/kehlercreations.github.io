@@ -93,4 +93,7 @@ footer.innerHTML = `
         <img class="contact-link-image" src="/Images/link_youtube.png" alt="YouTube logo">
     </a>
 </div>
+<div class="content">
+    <p>&copy 2023 Elliot Kehler</p>
+</div>
 `;
