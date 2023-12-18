@@ -15,8 +15,9 @@ const GameDesign_BrowseImages = function(category, direction) {
   imageList[visibleImageIndex].classList.add("no-display");
 
   visibleImageIndex += direction;
-  if(visibleImageIndex < 0) visibleImageIndex = imageListSize-1;
-  if(visibleImageIndex > imageListSize-1) visibleImageIndex = 0;
+  visibleImageIndex = (visibleImageIndex === imageListSize)
+    ? 0 : visibleImageIndex = (visibleImageIndex === -1)
+      ? imageListSize - 1 : visibleImageIndex;
 
   imageList[visibleImageIndex].classList.remove("no-display");
 }
