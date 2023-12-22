@@ -58,6 +58,7 @@ body {
 .main-header .header-title {
     display: block;
     font-size: clamp(0px, 5vw, 4rem);
+    letter-spacing: .2rem;
     text-decoration: none;
 }
 
@@ -217,7 +218,17 @@ a:focus::after {
     max-width: 80vw;
 
     /* background-color: rgba(255, 255, 255, 0.05); */
-    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ), url("Images/AST\ Shade\ Street.jpg");
+    /* background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ), url("Images/AST\ Shade\ Street.jpg"); */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7) ),
+    url("/Images/Game_Design/GameDesign_Combat_1.png"),
+    url("/Images/Game_Design/GameDesign_Combat_2.png"),
+    url("/Images/Game_Design/GameDesign_Combat_3.png"),
+    url("/Images/Game_Design/GameDesign_Combat_4.png"),
+    url("/Images/Game_Design/GameDesign_Combat_5.png");
+    background-position-x: center;
+    background-position-y: 0px, 0px, 25%, 50%, 75%, 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 100%;
     
     border-radius: 50px;
 }
