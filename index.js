@@ -79,17 +79,17 @@ footer.innerHTML = `
     <a class="contact-mail" href="mailto:elliot.kehler@gmail.com">elliot.kehler@gmail.com</a>
 </div>
 <div class="contact-links">
-    <a class="contact-link-link" href="https://www.discord.com" target="_blank" aria-label="Find me on Discord">
+    <a class="contact-link-link" href="https://discord.com/users/284414383638183938" target="_blank" aria-label="Find me on Discord">
         <img class="contact-link-image" src="/Images/link_discord.png" alt="Discord logo">
     </a>
     
-    <a class="contact-link-link" href="https://www.linkedin.com/in/elliot-kehler" target="_blank" aria-label="Find me on LinkedIn">
+    <a class="contact-link-link" href="https://linkedin.com/in/elliot-kehler" target="_blank" aria-label="Find me on LinkedIn">
         <img class="contact-link-image" src="/Images/link_linkedin.png" alt="LinkedIn logo">
     </a>
-    <a class="contact-link-link" href="https://www.twitter.com/elliotkehler" target="_blank" aria-label="Find me on X / Twitter">
+    <a class="contact-link-link" href="https://twitter.com/elliotkehler" target="_blank" aria-label="Find me on X / Twitter">
         <img class="contact-link-image" src="/Images/link_twitter.png" alt="Twitter logo">
     </a>
-    <a class="contact-link-link" href="https://www.youtube.com/@kehlercreations" target="_blank" aria-label="Find me on YouTube">
+    <a class="contact-link-link" href="https://youtube.com/@kehlercreations" target="_blank" aria-label="Find me on YouTube">
         <img class="contact-link-image" src="/Images/link_youtube.png" alt="YouTube logo">
     </a>
 </div>
