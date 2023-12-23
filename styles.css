@@ -397,6 +397,25 @@ a:focus::after {
     color: black;
 }
 
+/*-- 404 PAGE --*/
+
+.not-found-list {
+    margin-top: 20px;
+
+    font-size: 1.5rem;
+
+    list-style: none;
+}
+
+.not-found-list li {
+    margin-top: 10px;
+    
+}
+
+.not-found-list li a {
+    text-decoration: none;
+}
+
 /*-- MOBILE CHANGES --*/
 
 @media (max-width: 1470px) {
