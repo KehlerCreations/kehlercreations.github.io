@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 :root {
+    --ColorSiteBackground: rgb(18, 18, 18);
+
     --ColorBackgroundBlack: #000000;
     --ColorBackgroundDarkGray: #0f0f0f;
     --ColorBackgroundGray: #181818;
     --ColorBackgroundLightGray: #292929;
     --ColorBackgroundLighterGray: #353535;
+    --ColorBackgroundDarkWhite: #e6e6e6;
+    --ColorBackgroundWhite: #ffffff;
     --ColorTextWhite: #ffffff;
     --ColorTextLightGray: #e2e2e2;
+    --ColorTextLightGray: #e2e2e2;
     --ColorTextGray: #979797;
+    --ColorTextDarkGray: #212121;
+
+    --ColorAccentBrightRed: rgb(255, 0, 0);
+    --ColorAccentDarkRed: rgb(128, 0, 0);
+
+    --ColorInlineLink: var(--ColorAccentBrightRed);
 }
 
 * {
@@ -21,7 +32,7 @@
 
 body {
     position: static;
-    background-color: var(--ColorBackgroundDarkGray);
+    background-color: var(--ColorSiteBackground);
     min-height: 100vh;
 }
 
@@ -83,8 +94,6 @@ body {
     /* display: inline-block; */
     position: relative;
     padding: .2em 0;
-
-    /* border: 1px solid red; */
 }
 
 .navigation .main-navigation-button.desktop::after {
@@ -95,7 +104,7 @@ body {
     width: 100%;
     height: .2em;
     opacity: 0;
-    background-color: rgb(255, 0, 0);
+    background-color: var(--ColorAccentBrightRed);
     transition: opacity 300ms, transform 300ms;
     transform: scale(0, 100%);
 }
@@ -130,6 +139,15 @@ a:focus::after {
     color: var(--ColorTextLightGray);
 }
 
+.small-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: .15rem;
+    color: var(--ColorTextLightGray);
+}
+
 .information-base {
     margin: 0;
     padding: 0;
@@ -149,7 +167,41 @@ a:focus::after {
     line-height: 25px;
 }
 
-.button-view-game {
+/* Quick Navigation */
+.quick-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin-left: 50%;
+    translate: -50%;
+
+    width: 100%;
+}
+.quick-navigation button {
+    margin: 10%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    width: 200px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+    background-color: var(--ColorBackgroundWhite);
+    color: var(--ColorTextDarkGray)
+}
+
+/* Select Category */
+.select-category {
+    display: flex;
+}
+
+.button-external-link {
     padding: 15px 25px;
     margin: 25px 25px 50px 25px;
     border: none;
@@ -160,11 +212,11 @@ a:focus::after {
     transition: scale .1s, box-shadow .2s, color .1s, background-color .1s;
 }
 
-.button-view-game:hover {
+.button-external-link:hover {
     color: white;
     background-color: var(--ColorBackgroundGray);
     scale: 110%;
-    box-shadow: inset 0px 0px 0px 3px red;
+    box-shadow: inset 0px 0px 0px 3px var(--ColorAccentBrightRed);
     /*box-shadow: 0px 0px 0px 2px white inset;*/
 }
 
@@ -193,7 +245,7 @@ a:focus::after {
 
 .showreel-image-description {
     color: var(--ColorTextGray);
-    border: 1px solid red;
+    border: 1px solid var(--ColorAccentBrightRed);
 }
 
 .hidden {
@@ -271,18 +323,12 @@ a:focus::after {
 
     font-size: clamp(5px, 10vw, 2rem);
     letter-spacing: .2rem;
-
-    /* border: 1px solid red; */
-
-    /* text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); */
 }
 
 .gamedesign-category-information ul {
     text-align: left;
 
     list-style: none;
-
-    /* border: 1px solid red; */
 }
 
 .gamedesign-category-information ul li {
@@ -370,7 +416,7 @@ a:focus::after {
 }
 
 .contact-mail:hover {
-    color: var(--ColorTextLightGray);
+    color: var(--ColorAccentBrightRed);
 }
 
 .contact-links {
@@ -413,6 +459,17 @@ a:focus::after {
 
 .not-found-list li a {
     text-decoration: none;
+}
+
+/* OTHER */
+
+.inline-link {
+    color: var(--ColorInlineLink);
+    text-decoration: none;
+}
+.inline-link:hover {
+    color: var(--ColorInlineLink);
+    text-decoration: underline;
 }
 
 /*-- MOBILE CHANGES --*/

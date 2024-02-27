@@ -82,7 +82,6 @@ footer.innerHTML = `
     <a class="contact-link-link" href="https://discord.com/users/284414383638183938" target="_blank" aria-label="Find me on Discord">
         <img class="contact-link-image" src="/Images/link_discord.png" alt="Discord logo">
     </a>
-    
     <a class="contact-link-link" href="https://linkedin.com/in/elliot-kehler" target="_blank" aria-label="Find me on LinkedIn">
         <img class="contact-link-image" src="/Images/link_linkedin.png" alt="LinkedIn logo">
     </a>
@@ -94,6 +93,6 @@ footer.innerHTML = `
     </a>
 </div>
 <div class="content">
-    <p>&copy Elliot Kehler 2023</p>
+    <p>&copy Elliot Kehler 2024</p>
 </div>
 `;
