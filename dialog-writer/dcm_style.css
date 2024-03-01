@@ -1,0 +1,102 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    color: white;
+    background-color: rgb(53, 53, 53);
+}
+.content-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+}
+
+.system {
+    position: fixed;
+    bottom: 50px;
+    left: 200px;
+    scale: 200%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Create New Project */
+
+.content-newProject {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40vh;
+    padding: 20px;
+
+    font-size: 2rem;
+    width: 500px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    
+    border-radius: 5px;
+}
+
+.content-newProject input {
+    height: 1.2rem;
+    
+    background-color: rgba(0, 0, 0, 0.148);
+
+    border: 3px solid rgba(0, 0, 0, 0.181);
+    border-radius: 5px;
+}
+
+.content-newProject button {
+    padding: 5px 10px 5px 10px;
+}
+.content-newProject-ProjectName {
+    color: white;
+}
+
+
+
+/* Dialog Style */
+
+.content-main {
+    max-height: 800px;
+}
+
+#dialog-script {
+    color: white;
+    max-height: 500px;
+
+    font-family: 'Courier New', Courier, monospace;
+    
+    border: 3px solid rgba(0, 0, 0, 0.181);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.148);
+
+}
+
+#dialog-script-name {
+    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border: 3px solid rgba(0, 0, 0, 0.181);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.148);
+}
+
+#dialog-list {
+    margin: 20px;
+    list-style: none;
+}
+
+#dialog-list li {
+    
+    margin: 2px;
+    padding: 10px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+
+}
