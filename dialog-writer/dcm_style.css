@@ -1,14 +1,26 @@
+:root {
+    --ColorSiteBackground: rgb(32, 34, 39);
+
+    --ColorBackgroundBlack: #000000;
+    --ColorTextWhite: #ffffff;
+
+    --ColorButtonBackground: rgb(80, 97, 130);
+    --ColorButtonBackgroundHover: rgb(95, 113, 147);
+    --ColorButtonBackgroundClick: rgb(64, 77, 102);
+
+    --Size_EditorList: 340px;
+    --Size_EditorNode: 290px;
+}
+
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
+    margin: 100px;
+
     color: white;
-    background-color: rgb(53, 53, 53);
-}
-.content-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 3fr;
+    background-color: var(--ColorSiteBackground);
 }
 
 .system {
@@ -55,13 +67,81 @@ body {
     color: white;
 }
 
-
-
-/* Dialog Style */
+/* Content Design */
 
 .content-main {
-    max-height: 800px;
+    display: block;
+    width: 100%;
 }
+
+/* Column Interface */
+.editor-button {
+    width: 100px;
+    height: 35px;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+
+    background-color: var(--ColorButtonBackground);
+
+    border: none;
+    border-radius: 10px;
+}
+.editor-button:hover {
+    background-color: var(--ColorButtonBackgroundHover);
+}
+.editor-button:active {
+    background-color: var(--ColorButtonBackgroundClick);
+}
+
+.editor-node {
+    padding: 10px;
+
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+.editor-layer {
+    display: inline-block;
+    width: var(--Size_EditorList);
+
+    /* position: absolute; */
+
+    text-align: center;
+}
+
+.list-of-nodes {
+    padding: 0;
+    width: var(--Size_EditorNode);
+    margin-left: auto;
+    margin-right: auto;
+
+    list-style: none;
+}
+.list-of-nodes li {
+    margin-bottom: 20px;
+
+    background-color: var(--ColorButtonBackground);
+    
+    display: block;
+}
+.list-of-nodes li:hover {
+    background-color: var(--ColorButtonBackgroundHover);
+}
+.list-of-nodes li:active {
+    background-color: var(--ColorButtonBackgroundClick);
+}
+
+.button-edit-name {
+    position: absolute;
+    translate: -38px -21px;
+    text-align: center;
+    align-items: center;
+}
+
+/* Dialog Style */
 
 #dialog-script {
     color: white;

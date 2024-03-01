@@ -1,11 +1,7 @@
 /* DEFINE SYSTEM VARIABLES */
 
-var File_Object = {
-    Project_Name: "",
-    Dialog_Count: 0,
+let File_Object = {
 };
-
-let Selected_Dialog = undefined;
 
 /* CREATE AND LOAD PROJECTS */
 
@@ -20,34 +16,9 @@ document.getElementById('system-button-load-project').addEventListener('change',
 });
 
 document.getElementById("system-button-new-project").addEventListener("click", function() {
-
-    let element = document.getElementsByClassName("content-newProject")[0];
-    element.classList.remove("hidden");
-    
+    Project_ClearSystemButtons();
+    Project_AddProjectButtons();
 });
-
-document.getElementById("content-newProject-buttonCreate").addEventListener("click", function() {
-    let newProjectName = document.getElementsByClassName("content-newProject-ProjectName")[0];
-    if(true /* TEMPORARY */ || newProjectName.value !== "") {
-        Project_ClearSystemButtons();
-        Project_AddProjectButtons();
-        
-        File_Object.Project_Name = newProjectName.value;
-        document.title = newProjectName.value;
-    } else {
-        alert("Project requires a name");
-    }
-})
-
-const Project_DialogList_Update = function() {
-    const DialogList = document.querySelector("#dialog-list");
-
-    let _length = Object.keys(File_Object.Dialogs).length;
-    for(let i=0; i<_length; i++) {
-        //console.log(File_Object.Dialogs[i]);
-    }
-    console.log(File_Object.Dialogs[i]);
-}
 
 const Project_ClearSystemButtons = function() {
     let system_segments = document.getElementsByClassName("system-segment");
@@ -55,10 +26,6 @@ const Project_ClearSystemButtons = function() {
     for(let i=0; i<size; i++) {
         system_segments[0].remove();
     }
-    
-    let new_project_window = document.getElementsByClassName("content-newProject")[0];
-    new_project_window.classList.add("hidden");
-
 }
 
 const Project_AddProjectButtons = function() {
@@ -66,54 +33,134 @@ const Project_AddProjectButtons = function() {
     let system = document.getElementsByClassName("system")[0];
     system.innerHTML += `
     <div class="system-segment">
-        <button class="button" id="system-button-add-dialog">Add dialog</button>
-    </div>
-    <div class="system-segment">
         <button class="button" id="system-button-save-file">Save</button>
         <button class="button" id="system-button-exit">Close project</button>
     </div>
     `;
 
-    document.getElementById("system-button-add-dialog").addEventListener("click", function() {
-        let dialog = document.getElementById("dialog-list");
-        dialog.innerHTML += `
-            <li class="dialog-list-index">
-            </li>
-        `;
-        let dialog_name = document.getElementById("dialog-script-name");
-        dialog_name.value = "new dialog";
-
-        Selected_Dialog = dialog.lastElementChild;
-        Selected_Dialog.innerHTML = document.getElementById("dialog-script-name").value;
-        
-        File_Object[File_Object.Dialog_Count] = {
-            Topic: "new dialog",
-            Content: ""
-        }
-        
-        File_Object.Dialog_Count ++;
-
-        // Enables switching between dialogs in the list
-        let dialog_list_indices = dialog.getElementsByClassName("dialog-list-index");
-        let size = dialog_list_indices.length;
-        for(let i = 0; i < size; i++) {
-            dialog_list_indices[i].addEventListener("click", function() {
-                Selected_Dialog = this;
-                document.getElementById("dialog-script-name").value = this.innerHTML;
-            });
-        }
-
-    });
-
     let hidden_content = document.getElementsByClassName("content-main");
     hidden_content[0].classList.remove("hidden");
 }
 
+/* MODIFY EDITOR DISPLAY */
+const EditorUpdateLayer = function(layer) {
+    
+    let parentElement = document.getElementsByClassName("content-main")[0];
 
-/* HANDLE DIALOGS */
+    
+    if(document.body.contains(layer)) layer.remove(); // Remove layer to then rebuild it
 
-document.getElementById("dialog-script-name").addEventListener("input", function() {
+    layer = document.createElement("div");
+    layer.classList.add("editor-layer");
+    parentElement.appendChild(layer);
+    
+    /// Add the list of nodes
+    let listOfNodes = document.createElement("ul");
+    listOfNodes.classList.add("list-of-nodes");
+    layer.appendChild(listOfNodes);
+    
+    /// Add new nodes
+    var keys = Object.keys(File_Object);
+    var length = keys.length;
 
-    Selected_Dialog.innerHTML = document.getElementById("dialog-script-name").value;
+    for(var i=0; i<length; i++) {
 
-});
+        /// Add new node to the layer
+        let node = document.createElement("li");
+        node.classList.add("editor-node");
+        node.innerHTML = `<div>${keys[i]}</div>`;
+        listOfNodes.appendChild(node);
+
+        node.addEventListener("click", function() {
+           /// Add new layer or open existing one
+           let layerName = this.innerText;
+
+           let grandParent = this.parentElement.parentElement;
+
+           /// Remove excessive visible layers
+           let editorLayers = document.getElementsByClassName("editor-layer");
+           let editorLayersLength = editorLayers.length;
+           let thisLayerIndex = -1;
+           for(let i=0; i<editorLayersLength; i++) {
+                if(editorLayers[i] == grandParent) {
+                    thisLayerIndex = i;
+                    break;
+                }
+           }
+
+           for(let i=thisLayerIndex+1; i<editorLayersLength; i++) {
+                editorLayers[i].remove();
+           }
+
+           EditorUpdateLayer(layerName);
+        });
+
+        /// Add edit name button
+        let editName = document.createElement("div");
+        editName.classList.add("button-edit-name");
+        editName.innerText = "✎";
+        node.appendChild(editName);
+    
+        editName.addEventListener("click", function() {
+            let editableElement = this.parentElement.querySelector("div");
+            EditorEditNodeName(editableElement);
+        });
+    }
+
+    EditorAddNodeButton(layer);
+
+}
+
+const EditorEditNodeName = function(element) {
+    if(element.contentEditable == "inherit" || element.contentEditable == "false") {
+        element.contentEditable = true;
+        element.focus();
+        let range = document.createRange();
+        range.selectNodeContents(element);
+        let selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        let originalName = element.innerText;
+
+        element.addEventListener("keydown", (e) => {
+            if(e.key == "Enter") {
+                EditorEditNodeNameFinalize(element, originalName);
+            }
+        });
+    }
+}
+
+const EditorEditNodeNameFinalize = function(element, originalName) {
+    let newName = element.innerText;
+    element.contentEditable = false;
+    // Update File Object
+    File_Object[newName] = File_Object[originalName];
+    delete File_Object[originalName];
+}
+
+const EditorAddNodeButton = function(layer) {
+    let button = document.createElement("button");
+    button.classList.add("button", "editor-button", "editor-add-parent");
+    button.innerText = "add new";
+    button.layer = layer;
+    layer.appendChild(button);
+    
+    button.addEventListener("click", function() {
+        ObjectAddNode(this.layer);
+    });
+}
+
+/* INTERFACE FOR JSON EDITING */
+const ObjectAddNode = function(layer) {
+    File_Object[""] = {};
+    
+    EditorUpdateLayer(layer);
+
+    let layerNodes = layer.querySelector(".list-of-nodes");
+    let newestElement = layerNodes.lastChild.querySelector("div");
+    EditorEditNodeName(newestElement);
+}
+
+let root = document.querySelector(".editor-layer");
+EditorAddNodeButton(root);

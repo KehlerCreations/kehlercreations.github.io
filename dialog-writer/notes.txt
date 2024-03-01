@@ -1,27 +1,32 @@
 File Structure:
 ----
-"language" {
-    "interface" {
-        "mainmenu_exit": "EXIT",
-        "mainmenu_exit_confirm": "CONFIRM"
-    }
-    "dialog" {
-        "prologue" {
-            "narration_1" {
-                "1" {
-                    "LOGAN",
-                    "dialog goes here",
-                    "face image name goes here" // Example: "happy", parsed with a switch statement to find the correct image.
-                }
+(root)
+[category]
+    [topic]
+    [content]
+
+File Example:
+----
+"interface" {
+    "mainmenu_exit": "EXIT",
+    "mainmenu_exit_confirm": "CONFIRM"
+}
+"dialog" {
+    "prologue" {
+        "narration_1" {
+            "1" {
+                "LOGAN",
+                "dialog goes here",
+                "face image name goes here" // Example: "happy", parsed with a switch statement to find the correct image.
             }
         }
-        "safehouse" {
-            "topic_name" {
-                "1" {
-                    "MIGUEL",
-                    "dialog goes here",
-                    "face image name goes here"
-                }
+    }
+    "safehouse" {
+        "topic_name" {
+            "1" {
+                "MIGUEL",
+                "dialog goes here",
+                "face image name goes here"
             }
         }
     }
