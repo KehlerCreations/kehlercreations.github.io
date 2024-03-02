@@ -95,7 +95,7 @@ body {
     background-color: var(--ColorButtonBackgroundClick);
 }
 
-.editor-node {
+.node {
     padding: 10px;
 
     font-weight: bold;
@@ -110,6 +110,8 @@ body {
     /* position: absolute; */
 
     text-align: center;
+
+    border: 1px solid red;
 }
 
 .list-of-nodes {

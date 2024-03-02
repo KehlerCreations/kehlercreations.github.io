@@ -43,56 +43,62 @@ const Project_AddProjectButtons = function() {
 }
 
 /* MODIFY EDITOR DISPLAY */
-const EditorUpdateLayer = function(layer) {
-    
+const EditorUpdateLayer = function(layer, layerName = "") {
+
     let parentElement = document.getElementsByClassName("content-main")[0];
 
+    layer.remove(); // Remove layer to then rebuild it
+    // Note: Removing the layer puts it at the bottom
     
-    if(document.body.contains(layer)) layer.remove(); // Remove layer to then rebuild it
-
-    layer = document.createElement("div");
-    layer.classList.add("editor-layer");
-    parentElement.appendChild(layer);
+    let newLayer = document.createElement("div");
+    newLayer.classList.add("editor-layer");
+    parentElement.append(newLayer);
     
     /// Add the list of nodes
     let listOfNodes = document.createElement("ul");
     listOfNodes.classList.add("list-of-nodes");
-    layer.appendChild(listOfNodes);
+    newLayer.append(listOfNodes);
     
     /// Add new nodes
-    var keys = Object.keys(File_Object);
-    var length = keys.length;
 
-    for(var i=0; i<length; i++) {
+    let keys;
+    if(layerName == "") {
+        keys = Object.keys(File_Object);
+    } else {
+        keys = Object.keys(File_Object[layerName]);
+    }
+    let length = keys.length;
+    console.log(length);
+    for(let i=0; i<length; i++) {
 
         /// Add new node to the layer
         let node = document.createElement("li");
-        node.classList.add("editor-node");
+        node.classList.add("node");
         node.innerHTML = `<div>${keys[i]}</div>`;
         listOfNodes.appendChild(node);
 
-        node.addEventListener("click", function() {
-           /// Add new layer or open existing one
-           let layerName = this.innerText;
+        /// Add click to open the next layer
+        node.querySelector("div").addEventListener("click", function() {
 
-           let grandParent = this.parentElement.parentElement;
-
-           /// Remove excessive visible layers
-           let editorLayers = document.getElementsByClassName("editor-layer");
-           let editorLayersLength = editorLayers.length;
-           let thisLayerIndex = -1;
-           for(let i=0; i<editorLayersLength; i++) {
+            let grandParent = this.parentElement.parentElement.parentElement;
+            
+            /// Remove excessive visible layers
+            let editorLayers = document.getElementsByClassName("editor-layer");
+            let editorLayersLength = editorLayers.length;
+            let thisLayerIndex = -1;
+            for(let i=0; i<editorLayersLength; i++) {
                 if(editorLayers[i] == grandParent) {
                     thisLayerIndex = i;
                     break;
                 }
-           }
+            }
 
-           for(let i=thisLayerIndex+1; i<editorLayersLength; i++) {
+            for(let i=thisLayerIndex+1; i<editorLayersLength; i++) {
                 editorLayers[i].remove();
-           }
+            }
 
-           EditorUpdateLayer(layerName);
+            let clickedLayerName = this.innerText;
+            EditorUpdateLayer(layer, clickedLayerName);
         });
 
         /// Add edit name button
@@ -100,15 +106,16 @@ const EditorUpdateLayer = function(layer) {
         editName.classList.add("button-edit-name");
         editName.innerText = "✎";
         node.appendChild(editName);
-    
+        
         editName.addEventListener("click", function() {
             let editableElement = this.parentElement.querySelector("div");
             EditorEditNodeName(editableElement);
         });
     }
 
-    EditorAddNodeButton(layer);
+    EditorAddNodeButton(newLayer, layerName);
 
+    return newLayer;
 }
 
 const EditorEditNodeName = function(element) {
@@ -137,30 +144,29 @@ const EditorEditNodeNameFinalize = function(element, originalName) {
     // Update File Object
     File_Object[newName] = File_Object[originalName];
     delete File_Object[originalName];
+    // Keep in mind that this code currently always places a renamed node at the bottom of the list
 }
 
-const EditorAddNodeButton = function(layer) {
+const EditorAddNodeButton = function(layer, layerName) {
     let button = document.createElement("button");
     button.classList.add("button", "editor-button", "editor-add-parent");
     button.innerText = "add new";
-    button.layer = layer;
     layer.appendChild(button);
     
     button.addEventListener("click", function() {
-        ObjectAddNode(this.layer);
+        ObjectAddNode(layer, layerName);
     });
 }
 
 /* INTERFACE FOR JSON EDITING */
-const ObjectAddNode = function(layer) {
+const ObjectAddNode = function(layer, layerName) {
     File_Object[""] = {};
     
-    EditorUpdateLayer(layer);
-
-    let layerNodes = layer.querySelector(".list-of-nodes");
+    let newLayer = EditorUpdateLayer(layer, layerName);
+    let layerNodes = newLayer.querySelector(".list-of-nodes");
     let newestElement = layerNodes.lastChild.querySelector("div");
     EditorEditNodeName(newestElement);
 }
 
 let root = document.querySelector(".editor-layer");
-EditorAddNodeButton(root);
+EditorAddNodeButton(root, "");
