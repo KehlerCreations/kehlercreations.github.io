@@ -1,53 +1,52 @@
 /// Define images and their links
-let Images = [
+let ListOfImages = [
+    ["/Images/Game Logo.png", "/projects/", "a-star theft game logo"],
     ["/Images/Kitchen Render.jpg", "/3d-design/", "kitchen render"],
+    ["/Images/Knife Render.jpg", "/3d-design/", "knife render"],
+    ["/Images/Bottles Render.jpg", "/3d-design/", "bottles render"],
+    ["/Images/Snowman Render.jpg", "/3d-design/", "snowman render"],
     ["/Images/Game_Design/GameDesign_Graphics_1.png", "/projects/", "game design graphics"],
     ["/Images/Game_Design/GameDesign_Combat_1.png", "/game-design/", "game design combat"],
     ["/Images/Game_Design/GameDesign_Combat_2.png", "/game-design/", "game design combat"],
     ["/Images/Game_Design/GameDesign_Combat_3.png", "/game-design/", "game design combat"],
 ]
 
-/// Increase all images by 1
-CurrentImageIncrease = function() {
-    let maxImages = Images.length;
+/// Adds image to the html code
+const ShowreelGrid = document.querySelector(".mainpage-showreel");
+const NumberOfImages = ListOfImages.length;
+let i = 0;
+while(i < NumberOfImages) {
+    var imageIndex = Math.floor(Math.random()*ListOfImages.length);
+    let image = ListOfImages[imageIndex];
+    let element = document.createElement("div");
+    element.classList.add("mainpage-showreel-image");
+    element.innerHTML = `<a href=${image[1]}><img src="${image[0]}"><a>`;
+    ShowreelGrid.append(element);
 
-    Current_Image_Large++;
-    Current_Image_Small_Top++;
-    Current_Image_Small_Bottom++;
+    ListOfImages.splice(imageIndex, 1);
 
-    if(Current_Image_Large > maxImages - 1) Current_Image_Large -= maxImages;
-    if(Current_Image_Small_Top > maxImages - 1) Current_Image_Small_Top -= maxImages;
-    if(Current_Image_Small_Bottom > maxImages - 1) Current_Image_Small_Bottom -= maxImages;
+    i++;
 }
 
-let Random_Image = Math.floor((Math.random() * 3));
-Current_Image_Large = Random_Image;
-Current_Image_Small_Top = Current_Image_Large + 1;
-Current_Image_Small_Bottom = Current_Image_Small_Top + 1;
-CurrentImageIncrease();
+/// Defines variables for the carousel
+let CurrentIndex = 0;
+let PreviousIndex;
+const Images = document.querySelectorAll(".mainpage-showreel-image");
+const TotalImages = Object.keys(Images).length;
 
-let Element_MainPage_Showreel_Large = document.querySelector(".mainpage-showreel-large-image-container");
-let Element_MainPage_Showreel_Small_Top = document.getElementsByClassName("mainpage-showreel-small-image-container")[0];
-let Element_MainPage_Showreel_Small_Bottom = document.getElementsByClassName("mainpage-showreel-small-image-container")[1];
+const ImageWidth = 420; // image width + flex gap
 
-AddImagesToGrid = function() {
-    Element_MainPage_Showreel_Large.innerHTML = `
-        <a href=${Images[Current_Image_Large][1]}><img src="${Images[Current_Image_Large][0]}"><a>
-    `;
-
-    Element_MainPage_Showreel_Small_Top.innerHTML = `
-        <a href=${Images[Current_Image_Small_Top][1]}><img src="${Images[Current_Image_Small_Top][0]}"><a>
-    `;
-    Element_MainPage_Showreel_Small_Bottom.innerHTML = `
-        <a href=${Images[Current_Image_Small_Bottom][1]}><img src="${Images[Current_Image_Small_Bottom][0]}"><a>
-    `;
-}
-
-/// Place initial images in the grid
-AddImagesToGrid();
-
-/// Cycle through images
+/// Moves the carousel every 5 seconds
 setInterval(() => {
-    CurrentImageIncrease();
-    AddImagesToGrid();
+    PreviousIndex = CurrentIndex;
+    CurrentIndex = (CurrentIndex + 1) % TotalImages;
+    
+    ShowreelGrid.classList.add("sliding-transition");
+    ShowreelGrid.style.transform = `translateX(-${ImageWidth}px)`;
+    
+    setTimeout(() => {
+        ShowreelGrid.appendChild(Images[PreviousIndex]);
+        ShowreelGrid.classList.remove("sliding-transition");
+        ShowreelGrid.style.transform = ``;
+    }, 1000);
 }, 5000);
