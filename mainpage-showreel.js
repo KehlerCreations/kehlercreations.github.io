@@ -1,6 +1,6 @@
 /// Define images and their links
 let ListOfImages = [
-    ["/Images/Game Logo.png", "/projects/", "a-star theft game logo"],
+    ["/Images/A_Star_Theft_Game_Logo.png", "/projects/", "a-star theft game logo"],
     ["/Images/Kitchen Render.jpg", "/3d-design/", "kitchen render"],
     ["/Images/Knife Render.jpg", "/3d-design/", "knife render"],
     ["/Images/Bottles Render.jpg", "/3d-design/", "bottles render"],

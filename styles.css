@@ -2,21 +2,28 @@
 
 :root {
     /* --ColorSiteBackground: rgb(18, 18, 18); */
-    --ColorSiteBackground: rgb(18, 18, 20);
+    --ColorSiteBackground: rgb(19, 19, 23);
 
     --ColorBackgroundBlack: #000000;
     --ColorBackgroundDarkGray: #0f0f0f;
     /* --ColorBackgroundGray: #181818; */
-    --ColorBackgroundGray: #18181a;
-    --ColorBackgroundLightGray: #292929;
+    --ColorBackgroundGray: rgb(25, 25, 28);
+    --ColorBackgroundLightGray: #29292b;
     --ColorBackgroundLighterGray: #353535;
     --ColorBackgroundDarkWhite: #e6e6e6;
     --ColorBackgroundWhite: #ffffff;
     --ColorTextWhite: #ffffff;
-    --ColorTextLightGray: #e2e2e2;
-    --ColorTextLightGray: #e2e2e2;
+    --ColorTextLightGray: #e4e4e4d0;
     --ColorTextGray: #979797;
     --ColorTextDarkGray: #212121;
+
+    --ColorBackgroundStrongHighlight: rgba(255, 255, 255, 0.5);
+    --ColorBackgroundNormalHighlight: rgba(255, 255, 255, 0.07);
+    --ColorBackgroundSlightHighlight: rgba(255, 255, 255, 0.03);
+    --ColorBackgroundStrongShadow: rgba(0, 0, 0, 0.2);
+    --ColorBackgroundNormalShadow: rgba(0, 0, 0, 0.1);
+    --ColorBackgroundSlightShadow: rgba(0, 0, 0, 0.05);
+
 
     --ColorAccentBrightRed: rgb(255, 0, 0);
     --ColorAccentDarkRed: rgb(128, 0, 0);
@@ -50,7 +57,7 @@ body {
     align-items: center;
     gap: 0;
     grid-template-columns: 1fr fit-content(100%) 1fr;
-    background-color: var(--ColorBackgroundGray);
+    background-color: var(--ColorBackgroundNormalHighlight);
     justify-content: center;
     text-align: center;
     padding: 20px 20px;
@@ -152,10 +159,33 @@ a:focus::after {
     color: var(--ColorTextLightGray);
 }
 
+.title-image {
+
+    margin: 50px;
+
+    max-width: 800px;
+    
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.24);
+
+    border-radius: 20px;
+}
+.background-title-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+
+    -webkit-filter: blur(200px);
+    filter: blur(200px);
+
+    z-index: -1000;
+}
+
 .information-base {
     margin: 0;
     padding: 0;
-    background-color: var(--ColorBackgroundGray);
+    background-color: var(--ColorBackgroundSlightHighlight);
 }
 
 .information {
@@ -165,10 +195,12 @@ a:focus::after {
     margin-bottom: 20px;
     max-width: 600px;
     padding: 30px;
-    color: var(--ColorTextGray);
+    color: var(--ColorTextLightGray);
     background-color: #00000000;
     letter-spacing: 1px;
     line-height: 25px;
+
+    text-shadow: 3px 3px 5px black;
 }
 
 /* Quick Navigation */
@@ -210,7 +242,7 @@ a:focus::after {
     padding: 15px 25px;
     margin: 25px 25px 50px 25px;
     border: none;
-    background-color: white;
+    background-color: var(--ColorBackgroundWhite);
     color: black;
     font-weight: bold;
     font-size: 1.2em;
@@ -219,7 +251,7 @@ a:focus::after {
 
 .button-external-link:hover {
     color: white;
-    background-color: var(--ColorBackgroundGray);
+    background-color: var(--ColorBackgroundStrongShadow);
     scale: 110%;
     border-radius: 0px;
     box-shadow: inset 0px 0px 0px 3px var(--ColorAccentBrightRed);
@@ -460,7 +492,7 @@ a:focus::after {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     padding: 50px;
-    background-color: var(--ColorBackgroundGray);
+    background-color: var(--ColorBackgroundSlightHighlight);
 }
 
 .contact-link-image {
