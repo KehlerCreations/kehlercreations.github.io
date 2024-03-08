@@ -299,6 +299,8 @@ a:focus::after {
     margin-right: auto;
     padding-left: 50px;
     padding-right: 50px;
+
+    border-radius: 15px;
 }
 .mainpage-carousel {
     height: 100%;
