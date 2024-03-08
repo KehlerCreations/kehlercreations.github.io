@@ -320,6 +320,33 @@ a:focus::after {
 .mainpage-carousel.sliding-transition {
     transition: transform 1s ease-in-out;
 }
+.mainpage-carousel-arrows {
+    position: absolute;
+    top: 45%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 50px;
+    aspect-ratio: 1;
+
+    color: white;
+    font-size: 30px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow: 0 1px 5px black;
+}
+.mainpage-carousel-arrow-left {
+    left: 20px;
+}
+.mainpage-carousel-arrow-right {
+    right: 20px;
+}
 
 /* Image Showreel */
 .showreel {
@@ -368,6 +395,8 @@ a:focus::after {
     align-items: center;
 
     max-width: 1200px;
+
+    text-align: left;
 }
 .card-showcase img {
     width: 500px;

@@ -6,12 +6,15 @@ const Button_BankNoir = Categories_Projects.querySelector(".section-title.bank-n
 
 Button_AStarTheft.addEventListener("click", function() {
     ShowContent(".content.a-star-theft", this);
+    ShiftContent(".content.a-star-theft");
 });
 Button_SunsetTrail.addEventListener("click", function() {
     ShowContent(".content.sunset-trail", this);
+    ShiftContent(".content.sunset-trail");
 });
 Button_BankNoir.addEventListener("click", function() {
     ShowContent(".content.bank-noir", this);
+    ShiftContent(".content.bank-noir");
 });
 
 const ShowContent = function(contentClasses, categoryButton) {
@@ -32,3 +35,20 @@ const ShowContent = function(contentClasses, categoryButton) {
     categoryButton.classList.add("selected");
 
 }
+
+const ShiftContent = function(contentClasses) {
+    let content = document.querySelector(contentClasses);
+    content = content.querySelectorAll(".card-showcase");
+    let length = content.length;
+    
+    let baseDistance = 50;
+    let initialShift = -(baseDistance * (length - 1)) / 2;
+    let actualShift = initialShift;
+
+    for(let i=0; i<length; i++) {
+        content[i].style.transform = `translateX(${actualShift}px)`;
+        actualShift += baseDistance;
+    }
+}
+
+ShiftContent(".content.a-star-theft");

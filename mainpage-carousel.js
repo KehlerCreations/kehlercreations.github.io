@@ -39,19 +39,55 @@ const TotalImages = Object.keys(Images).length;
 const ImageWidth = 420; // image width + flex gap
 
 /// Moves the carousel every 5 seconds
-setInterval(() => {
-    PreviousIndex = CurrentIndex;
-    CurrentIndex = (CurrentIndex + 1) % TotalImages;
-    
-    ShowreelGrid.classList.add("sliding-transition");
-    ShowreelGrid.style.transform = `translateX(-${ImageWidth}px)`;
-    
-    setTimeout(() => {
-        ShowreelGrid.appendChild(Images[PreviousIndex]);
-        ShowreelGrid.classList.remove("sliding-transition");
-        ShowreelGrid.style.transform = ``;
-    }, 1000);
+
+const MoveCarousel = function() {
+    if(!ShowreelGrid.classList.contains("sliding-transition")) {
+        PreviousIndex = CurrentIndex;
+        CurrentIndex = (CurrentIndex + 1) % TotalImages;
+        
+        ShowreelGrid.classList.add("sliding-transition");
+        let distance = ImageWidth;
+        ShowreelGrid.style.transform = `translateX(-${distance}px)`;
+        
+        setTimeout(() => {
+            ShowreelGrid.appendChild(Images[PreviousIndex]);
+            ShowreelGrid.classList.remove("sliding-transition");
+            ShowreelGrid.style.transform = ``;
+        }, 1000);
+    }
+}
+
+let CarouselTimer = setInterval(() => {
+    MoveCarousel();
 }, 5000);
 
+let LeftArrow = document.querySelector(".mainpage-carousel-arrow-left");
+LeftArrow.addEventListener("click", () => {    
+    if(!ShowreelGrid.classList.contains("sliding-transition")) {
+        PreviousIndex = CurrentIndex;
+        CurrentIndex = (CurrentIndex - 1 + TotalImages) % TotalImages;
+        
+        let distance = ImageWidth;
+        ShowreelGrid.style.transform = `translateX(-${distance}px)`;
+        ShowreelGrid.insertBefore(Images[CurrentIndex], ShowreelGrid.firstChild);
+        
+        setTimeout(() => {
+            ShowreelGrid.style.transform = ``;
+            ShowreelGrid.classList.add("sliding-transition");
+        }, 1);
+
+        setTimeout(() => {
+            ShowreelGrid.style.transform = ``;
+            ShowreelGrid.classList.remove("sliding-transition");
+        }, 1000);
+    }
+    
+    CarouselTimer.clearInterval();
+});
+let RightArrow = document.querySelector(".mainpage-carousel-arrow-right");
+RightArrow.addEventListener("click", () => {
+    MoveCarousel();
+    CarouselTimer.clearInterval();
+});
 
 /*-- CONTENT CAROUSELS --*/
