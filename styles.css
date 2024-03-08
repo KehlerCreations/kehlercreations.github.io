@@ -2,7 +2,7 @@
 
 :root {
     /* --ColorSiteBackground: rgb(18, 18, 18); */
-    --ColorSiteBackground: rgb(19, 19, 23);
+    --ColorSiteBackground: rgb(21, 19, 27);
 
     --ColorBackgroundBlack: #000000;
     --ColorBackgroundDarkGray: #0f0f0f;
@@ -29,6 +29,15 @@
     --ColorAccentDarkRed: rgb(128, 0, 0);
 
     --ColorInlineLink: var(--ColorAccentBrightRed);
+    
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(54, 54, 54);
 }
 
 * {
@@ -126,6 +135,32 @@ a:focus::after {
     transform: scale(100%, 100%);
 }
 
+/* FOOTER */
+.footer {
+    margin: 50px auto;
+    padding: 0px auto;
+    text-align: center;
+}
+
+
+/*-- CATEGORY SELECTOR --*/
+.category-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    flex-basis: auto;
+
+    margin-top: 20px;
+    padding: 20px;
+}
+.category-selector h2:hover {
+    scale: 110%;
+    transition: scale .1s ease-in-out;
+}
+.category-selector .selected {
+    text-decoration: underline;
+}
+
 /*-- CONTENT --*/
 
 .content {
@@ -175,6 +210,7 @@ a:focus::after {
     top: 0;
     
     width: 100%;
+    height: 120%;
 
     -webkit-filter: blur(200px);
     filter: blur(200px);
@@ -233,11 +269,6 @@ a:focus::after {
     color: var(--ColorTextDarkGray);
 }
 
-/* Select Category */
-.select-category {
-    display: flex;
-}
-
 .button-external-link {
     padding: 15px 25px;
     margin: 25px 25px 50px 25px;
@@ -259,7 +290,7 @@ a:focus::after {
 }
 
 /* Main Page Showreel */
-.mainpage-showreel-container {
+.mainpage-carousel-container {
     position: relative;
     overflow: hidden;
     max-width: 1000px;
@@ -269,7 +300,7 @@ a:focus::after {
     padding-left: 50px;
     padding-right: 50px;
 }
-.mainpage-showreel {
+.mainpage-carousel {
     height: 100%;
 
     display: flex;
@@ -279,14 +310,14 @@ a:focus::after {
     gap: 20px;
     
 }
-.mainpage-showreel img {
+.mainpage-carousel img {
     width: 400px;
     height: 300px;
     object-fit: cover;
 
     border-radius: 20px;
 }
-.mainpage-showreel.sliding-transition {
+.mainpage-carousel.sliding-transition {
     transition: transform 1s ease-in-out;
 }
 
@@ -304,7 +335,7 @@ a:focus::after {
     width: 400px;
     height: 300px;
     object-fit: cover;
-    border-radius: 10%;
+    border-radius: 50px;
     transition: scale .15s, border-radius .15s;
 }
 .showreel-image:hover {
@@ -322,6 +353,35 @@ a:focus::after {
 
 .no-display {
     display: none;
+}
+
+/* Card Showcase */
+.card-showcase {
+    margin-top: 75px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1200px;
+}
+.card-showcase img {
+    width: 500px;
+    height: 375px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    transition: width .2s, scale .42s, translate 1s;
+}
+.card-showcase img:hover {
+    width: 100%;
+    scale: 1.5;
 }
 
 /*-- GAME DESIGN --*/
@@ -619,6 +679,16 @@ a:focus::after {
     .scale-animated {
         transition: font-size 5s;
         font-size: 4rem;
+    }
+
+    /* Card Showcase */
+    .card-showcase {
+        display: block;
+        translate: 0;
+    }
+    .card-showcase img:hover {
+        width: 500px;
+        scale: 1;
     }
 
     /* GAME DESIGN */

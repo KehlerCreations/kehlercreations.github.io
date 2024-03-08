@@ -9,6 +9,7 @@
         <meta name="description" content="Elliot Kehler portfolio. Kehler Creations game and production site. View my games and other creations that I have made during the last 10 years.">
         <link rel="stylesheet" href="/styles.css">
         <script defer src="/universal_functionality.js"></script>
+        <script defer src="/category_selectors.js"></script>
     </head>
 
     <body>
@@ -18,31 +19,76 @@
         </header>
         
         <!-- PROJECT LIST -->
+        <section id="category-selector-projects" class="category-selector">
+            <h2 class="section-title sunset-trail">SUNSET TRAIL</h2>
+            <h2 class="section-title a-star-theft selected">A-STAR THEFT</h2>
+            <h2 class="section-title bank-noir">BANK NOIR</h2>
+        </section>
 
         <!--  A-STAR THEFT  -->
-        <section class="content">
-            <img class="background-title-image" src="/Images/A_Star_Theft_Game_Logo.png">
-            <h2 class="section-title">A-STAR THEFT</h2>
-            <p class="information">My most important project. Through developing A-Star Theft, I have learned all disciplines of game development: Including design, programming, graphics, audio and writing.</p>
+        <section class="content a-star-theft">
+            <img class="background-title-image" src="/Images/A_Star_Theft/A_Star_Theft_Background.png" style="opacity: .5;"> <!-- Create a slightly brighter background -->
+            <h2 class="section-title">A-STAR THEFT&nbsp&nbsp-&nbsp&nbspMy 10 year journey</h2>
+            <p class="information">My most important project. Through developing A-Star Theft, I have learned all disciplines of game development: Including design, programming, graphics, audio and writing.
+                <br><br>
+                2024 marks my 10 year aniversary of game development, and of this game. While A-Star Theft is technically not my first project, it is the one that I have stood by for a decade.
+            </p>
             <a href="https://store.steampowered.com/app/1354750/AStar_Theft/" target="_blank"><button class="button button-external-link">VIEW THE GAME ON STEAM</button></a>
 
-            <div class="showreel">
-                <img class="showreel-image" src="/Images/Game_Design/GameDesign_Graphics_1.png" alt="Video game screenshot">
-                <img class="showreel-image" src="/Images/Game_Design/GameDesign_Puzzle_1.png" alt="Video game screenshot">
-                <img class="showreel-image" src="/Images/Game_Design/GameDesign_AI_1.png" alt="Video game screenshot">
-            </div>
-            <div class="information-base">
+            <div class="card-showcase" style="translate: -50px"> <!-- Remember to do translate in JavaScript instead -->
+                <img src="/Images/A_Star_Theft/AStarTheft_LuxuryCasino.png" alt="Video game screenshot">
                 <p class="information">I care about my craft, always striving for improvements. Since publishing A-Star Theft, I have released over 30 updates with graphical, audio, and gameplay upgrades.
                     <br>Continous work on the game has made me a better designer in every regard.</p>
+            </div>
+            <div class="card-showcase" style="translate: 0px">
+                <img src="/Images/A_Star_Theft/Final Raid 1.png" alt="Video game screenshot">
+                <p class="information">My current goal is to develop a remaster of the game, with a special focus on a reimagined narrative.
+                    <br><br>
+                    This new story is the one that I have wanted to tell since the game's release. With the experience gained through university and extensive iterative work, I believe that I have forged an immersive journey into the madness of the criminal underworld.
+                </p>
+            </div>
+            <div class="card-showcase" style="translate: 50px">
+                <img src="/Images/A_Star_Theft/Let The Good Times Roll 1.png" alt="Video game screenshot">
+                <p class="information">I have put A-Star Theft through rigorous playtesting to solidify its quality in many aspects. Enjoyment and usability go hand-in-hand for an engaging experience.</p>
+            </div>
+                
             </div>
         </section>
 
         <!--  SUNSET TRAIL  -->
+        <section class="content sunset-trail no-display">
+            <img class="background-title-image" src="/Images/Sunset_Trail/SunsetTrail_SatelliteMap.png" style="opacity: .5;">
+            <h2 class="section-title">SUNSET TRAIL&nbsp&nbsp-&nbsp&nbspA connected world</h2>
+            <p class="information">My most ambitious project. I have developed several playable prototypes of a larger story taking place in San Dinero, the world created for A-Star Theft.</p>
+
+            <div class="card-showcase">
+                <img src="/Images/Sunset_Trail/SunsetTrail_MapConcept.png" alt="Video game screenshot">
+                <p class="information">I have created a detailed world map of Sunset Trail. This pixel-art styled map depicts the city of San Dinero and its neighboring wilderness.</p>
+            </div>
+            <div class="card-showcase">
+                <img src="/Images/Sunset_Trail/SunsetTrail_SatelliteMap.png" alt="Video game screenshot">
+                <p class="information">Using Unreal Engine 5, this sculpted 3D map reveals what the world could look like in a high-fidelity environment. I used splines to create roads, and simple placeholder buildings to get a sense of the scale.</p>
+            </div>
+        </section>
 
         <!--  DOUBLE TROUBLE AT BANK NOIR  -->
-        
+        <section class="content bank-noir no-display">
+            <img class="background-title-image" src="/Images/Bank_Noir/Game_Screenshot.png">
+            <h2 class="section-title">DOUBLE TROUBLE AT BANK NOIR</h2>
+            <p class="information">Double Trouble At Bank Noir is a university project developed by a larger team. My contribution lie mainly in the narrative design, creating backstories, character appearance, and guaranteeing gameplay congruency.</p>
+
+            <div class="card-showcase">
+                <img src="/Images/Bank_Noir/Game_Screenshot.png" alt="Video game screenshot">
+                <p class="information">Two players compete in a tug-of-war between the 1930s mafia and the bank. The mafia must steal the money and get it to their getaway car, while the bank defends their territory.</p>
+            </div>
+            <div class="card-showcase">
+                <img src="/Images/Bank_Noir/Phase_1.jpg" alt="Video game screenshot">
+                <p class="information">Each player stategically places cards on the blueprint, which changes how the game is played. Every round is unique!</p>
+            </div>
+        </section>
+
         <!--  CONTACT  -->
-        <footer class="content">
+        <footer class="footer">
             <!-- Load footer through Javascript -->
         </footer>
         

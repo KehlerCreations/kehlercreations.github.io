@@ -5,6 +5,8 @@ let ListOfImages = [
     ["/Images/Knife Render.jpg", "/3d-design/", "knife render"],
     ["/Images/Bottles Render.jpg", "/3d-design/", "bottles render"],
     ["/Images/Snowman Render.jpg", "/3d-design/", "snowman render"],
+    ["/Images/Guitar Render.jpg", "/3d-design/", "guitar render"],
+    ["/Images/Furniture Render.jpg", "/3d-design/", "furniture render"],
     ["/Images/Game_Design/GameDesign_Graphics_1.png", "/projects/", "game design graphics"],
     ["/Images/Game_Design/GameDesign_Combat_1.png", "/game-design/", "game design combat"],
     ["/Images/Game_Design/GameDesign_Combat_2.png", "/game-design/", "game design combat"],
@@ -12,14 +14,14 @@ let ListOfImages = [
 ]
 
 /// Adds image to the html code
-const ShowreelGrid = document.querySelector(".mainpage-showreel");
+const ShowreelGrid = document.querySelector(".mainpage-carousel");
 const NumberOfImages = ListOfImages.length;
 let i = 0;
 while(i < NumberOfImages) {
     var imageIndex = Math.floor(Math.random()*ListOfImages.length);
     let image = ListOfImages[imageIndex];
     let element = document.createElement("div");
-    element.classList.add("mainpage-showreel-image");
+    element.classList.add("mainpage-carousel-image");
     element.innerHTML = `<a href=${image[1]}><img src="${image[0]}"><a>`;
     ShowreelGrid.append(element);
 
@@ -31,7 +33,7 @@ while(i < NumberOfImages) {
 /// Defines variables for the carousel
 let CurrentIndex = 0;
 let PreviousIndex;
-const Images = document.querySelectorAll(".mainpage-showreel-image");
+const Images = document.querySelectorAll(".mainpage-carousel-image");
 const TotalImages = Object.keys(Images).length;
 
 const ImageWidth = 420; // image width + flex gap
@@ -50,3 +52,6 @@ setInterval(() => {
         ShowreelGrid.style.transform = ``;
     }, 1000);
 }, 5000);
+
+
+/*-- CONTENT CAROUSELS --*/
