@@ -152,6 +152,8 @@ a:focus::after {
 
     margin-top: 20px;
     padding: 20px;
+
+    user-select: none;
 }
 .category-selector h2:hover {
     scale: 110%;
