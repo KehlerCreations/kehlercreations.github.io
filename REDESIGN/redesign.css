@@ -63,7 +63,7 @@ body {
 #main-content-grid {
     display: grid;
     grid-template-columns: 1.5fr 1.5fr 1fr;
-    gap: 70px;
+    gap: 35px;
     max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
@@ -205,6 +205,34 @@ body {
 }
 .grid-content .skills .bullet-points li {
     padding: 10px;
+}
+
+/* #endregion */
+
+
+
+/* #region Samples */
+
+.sample-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.sample-group {
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+.sample-image {
+    max-width: 95%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.sample-description {
+    font-size: .8rem;
 }
 
 /* #endregion */
