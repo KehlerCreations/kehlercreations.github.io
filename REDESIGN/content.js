@@ -11,7 +11,7 @@ fetch("header.html")
 
 //#endregion
 
-// #region Load content
+//#region Load content
 
 const mainGrid = document.getElementById("main-content-grid");
 const urls = ["experience.html", "skills.html", "samples.html"];
@@ -38,7 +38,12 @@ const LoadContent = function() {
   });
 
   currentContent++;
-  if(currentContent >= urls.length) clearInterval(contentTimer);
+
+  // When all content is loaded
+  if(currentContent >= urls.length) {
+    clearInterval(contentTimer);
+    InteractiveImages();
+  }
 }
 
 let currentContent = 0;
@@ -46,4 +51,13 @@ let contentTimer = setInterval(LoadContent, 100);
 
 
 
-// #endregion
+//#endregion
+
+const InteractiveImages = function() {
+  const images = document.querySelectorAll("img");
+  images.forEach(element => {
+    element.addEventListener("click", () => {
+      alert("success");
+    });
+  });
+}

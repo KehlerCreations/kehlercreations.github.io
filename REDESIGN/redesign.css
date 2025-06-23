@@ -118,6 +118,7 @@ body {
 }
 
 .grid-content .experience .subtitle {
+    margin-inline-end: 30px;
     font-size: 1rem;
     position: relative;
     left: 30px;
