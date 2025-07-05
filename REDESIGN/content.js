@@ -39,22 +39,33 @@ const LoadContent = function() {
 
   currentContent++;
 
-  // When all content is loaded
+  // When all sections are loaded
   if(currentContent >= urls.length) {
     clearInterval(contentTimer);
 
+    // Load samples
+    
     setTimeout(() => {
-      LoadSamples(Samples.design);
-      LoadSamples(Samples.graphics_3d);
-      LoadSamples(Samples.music);
-      LoadSamples(Samples.logotypes);
+      let samples = [Samples.design, Samples.graphics_3d, Samples.music, Samples.logotypes];
+      let currentSampleCategory = 0;
+      
+      let localLoad = function() {
+        setTimeout(()=>{
+          LoadSamples(samples[currentSampleCategory]);
+          currentSampleCategory++;
+          if(currentSampleCategory < samples.length) localLoad();
+        }, 200);
+      }
+
+      localLoad();
+
       CreateInteractiveImages();
-    }, 100);
+    }, 150);
   }
 }
 
 let currentContent = 0;
-let contentTimer = setInterval(LoadContent, 150);
+let contentTimer = setInterval(LoadContent, 200);
 
 //#endregion
 
