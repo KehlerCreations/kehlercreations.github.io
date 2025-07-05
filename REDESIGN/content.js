@@ -49,12 +49,12 @@ const LoadContent = function() {
       LoadSamples(Samples.music);
       LoadSamples(Samples.logotypes);
       CreateInteractiveImages();
-    }, 50);
+    }, 100);
   }
 }
 
 let currentContent = 0;
-let contentTimer = setInterval(LoadContent, 100);
+let contentTimer = setInterval(LoadContent, 150);
 
 //#endregion
 
@@ -198,12 +198,20 @@ const Samples = {
 
 const LoadSamples = function(category) {
   let baseElement = document.getElementById("samples");
+  
+
 
   //#region Create category
 
   // Create category parent element
   let newCategory = CreateElement("div", baseElement);
   newCategory.classList.add("subject", "samples", "folded");
+  
+  newCategory.style.opacity = "0";
+  newCategory.style.transition = "opacity 1s";
+  setTimeout(() => {
+    newCategory.style.opacity = "1";
+  }, 100);
 
   // Create category title
   let categoryTitleGroup = CreateElement("div", newCategory);
