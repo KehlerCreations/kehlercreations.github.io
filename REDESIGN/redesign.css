@@ -204,9 +204,9 @@ body {
 
 /* #region Skills */
 
-.grid-content .skills {
+/* .grid-content .skills {
     
-}
+} */
 
 .grid-content .skills .bullet-points {
     font-size: 1.3rem;
@@ -249,10 +249,22 @@ body {
     max-width: 95%;
     object-fit: cover;
     border-radius: 5px;
+    aspect-ratio: 1.3;
 }
 
 .sample-description {
     font-size: .8rem;
+}
+
+.samples {
+    overflow: hidden;
+    mask-image: linear-gradient(white, white);
+
+    transition: max-height .5s;
+}
+
+.samples.folded {
+    mask-image: linear-gradient(white, transparent);
 }
 
 /* #endregion */
