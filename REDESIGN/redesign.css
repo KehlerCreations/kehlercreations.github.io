@@ -75,6 +75,8 @@ body {
 @media (width <= 1200px) {
     #main-content-grid {
         grid-template-columns: 1fr;
+        width: 100vw;
+        margin-right: initial;
     }
 }
 
