@@ -49,7 +49,7 @@ const LoadContent = function() {
       LoadSamples(Samples.music);
       LoadSamples(Samples.logotypes);
       CreateInteractiveImages();
-    }, 30);
+    }, 50);
   }
 }
 
