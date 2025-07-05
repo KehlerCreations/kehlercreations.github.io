@@ -323,7 +323,8 @@ const ExpandImage = function(original_image) {
   let image = CreateElement("img", wrapper);
   image.src = original_image.src;
   image.style.display = "block";
-  image.style.maxHeight = "800px";
+  image.style.maxWidth = "80vw";
+  image.style.maxHeight = "80vh";
   image.style.margin = "auto";
   image.style.userSelect = "none";
   
