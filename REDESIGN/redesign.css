@@ -250,6 +250,7 @@ body {
     object-fit: cover;
     border-radius: 5px;
     aspect-ratio: 1.3;
+
 }
 
 .sample-description {
@@ -259,7 +260,7 @@ body {
 .samples {
     overflow: hidden;
     mask-image: linear-gradient(white, white);
-
+    
     transition: max-height .5s;
 }
 

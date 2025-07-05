@@ -49,7 +49,7 @@ const LoadContent = function() {
       LoadSamples(Samples.music);
       LoadSamples(Samples.logotypes);
       CreateInteractiveImages();
-    }, 10);
+    }, 11);
   }
 }
 
@@ -301,6 +301,7 @@ const CreateInteractiveImages = function() {
 }
 
 const AddInteractiveImage = function(element) {
+  element.style.cursor = "pointer";
   element.addEventListener("click", () => {
     ExpandImage(element);
   });
@@ -322,7 +323,7 @@ const ExpandImage = function(original_image) {
   let image = CreateElement("img", wrapper);
   image.src = original_image.src;
   image.style.display = "block";
-  image.style.maxHeight = "500px";
+  image.style.maxHeight = "800px";
   image.style.margin = "auto";
   image.style.userSelect = "none";
   
