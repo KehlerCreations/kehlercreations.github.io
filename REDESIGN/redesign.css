@@ -113,7 +113,7 @@ body {
 }
 
 .grid-content .title {
-    font-size: 1.8rem;
+    font-size: clamp(1.15rem, 1.5vw, 1.8rem);
     margin-bottom: .5rem;
     width: 200%;
 }
@@ -266,7 +266,7 @@ body {
 }
 
 .sample-description {
-    font-size: .8rem;
+    font-size: clamp(.5rem, .7vw, .8rem);
 }
 
 .samples {
@@ -297,3 +297,22 @@ body {
 
 
 
+/* #region Mobil adjustments */
+
+@media (width <= 1200px) {
+    #main-content-grid {
+        grid-template-columns: 1fr;
+        width: 100vw;
+        /* margin-right: initial; */
+    }
+
+    .grid-content .title {
+        font-size: 1.8rem;
+    }
+
+    .sample-description {
+        font-size: .8rem;
+    }
+}
+
+/* #endregion */
