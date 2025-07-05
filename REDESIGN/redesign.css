@@ -80,7 +80,7 @@ body {
     #main-content-grid {
         grid-template-columns: 1fr;
         width: 100vw;
-        margin-right: initial;
+        /* margin-right: initial; */
     }
 }
 
