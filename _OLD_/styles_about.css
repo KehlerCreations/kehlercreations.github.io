@@ -1,0 +1,42 @@
+.personal-presentation {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto; margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 175px;
+    width: 70vw;
+}
+
+.personal-presentation p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+    /* width: 500px; */
+}
+
+.presentation-information-highlight {
+    color: rgb(255, 255, 255);
+}
+
+.personal-presentation p.text-justify {
+    text-align: justify;
+}
+
+@media (max-width: 800px) {
+
+    .personal-presentation {
+        display: block;
+    }
+
+    .personal-presentation p {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+
+        /* width: 300px; */
+    }
+
+}
