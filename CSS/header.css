@@ -1,18 +1,12 @@
-@scope(#main-header) {
+#header-main-bar {
+    display: flex;
+}
 
-    #header-main-bar {
-        display: flex;
-    }
+.kc-logo {
+    width: 50px;
+    height: 50px;
+}
 
-    .kc-logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    #main-title {
-        font-family: Bahnschrift;
-    }
-
-
-
+#main-title {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 }
