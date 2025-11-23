@@ -1,9 +1,11 @@
 #header-main-bar {
-    padding: 20px 50px;
+    height: 130px;
+    padding: 0px clamp(10px, 5vw, 100px);
     display: flex;
-    /* justify-content: space-between; */
+    
+    justify-content: space-between;
     align-items: center;
-    column-gap: 5rem;
+    column-gap: clamp(15px, 5vw, 5rem);
     text-wrap-mode: nowrap;
 
     background-color: var(--Color_BG_Header);
@@ -16,25 +18,62 @@
 }
 #main-header #main-branding h1 {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
-    font-size: 3rem;
+    font-size: clamp(15px, 3vw, 3rem);
     padding-left: 1rem;
     text-transform: uppercase;
 }
 #main-header #main-branding img {
-    width: 100px;
-    height: 100%;
+    width: clamp(15px, 6.5vw, 90px);
 }
 
 /* Navbar */
-#header-main-bar .navbar ul {
+#header-main-bar .navbar {
+    height: 100%;
+}
+#header-main-bar .navbar .link-list {
+    height: inherit;
     display: flex;
-    column-gap: 2rem;
+    align-items: center;
 }
-#header-main-bar .navbar ul li {
+#header-main-bar .navbar .link-list .large-list-index {
+    height: inherit;
+    align-content: center;
 }
-#header-main-bar .navbar ul li a, #header-main-bar .navbar ul li a:visited {
-    font-size: 2rem;
+.large-link, .large-link:visited {
+    height: 100%;
+    padding: 0 clamp(2px, 1.2vw, 3rem);
+    display: block;
+    align-content: center;
+}
+
+.dropdown {
+    display: block;
+    position: relative;
+}
+.dropdown:hover .dropdown-content {
+    display: grid;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--Color_BG_Header);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+.dropdown-content a {
+    font-size: clamp(15px, 2vw, 1.5rem) !important;
+    padding: 20px 20px;
+}
+
+/* General header link styling */
+#header-main-bar a {
+    font-size: clamp(15px, 2.5vw, 2rem);
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+}
+#header-main-bar a:hover {
+    background-color: var(--Color_BG_Hover);
 }
