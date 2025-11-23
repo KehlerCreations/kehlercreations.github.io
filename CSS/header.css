@@ -1,6 +1,7 @@
 #header-main-bar {
     height: 130px;
     padding: 0px clamp(10px, 5vw, 100px);
+    margin-bottom: 50px;
     display: flex;
     
     justify-content: space-between;
@@ -12,17 +13,17 @@
 }
 
 /* Logo */
-#main-header #main-branding {
+#header-main-bar #main-branding {
     display: flex;
     align-items: center;
 }
-#main-header #main-branding h1 {
+#header-main-bar #main-branding h1 {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
     font-size: clamp(15px, 3vw, 3rem);
     padding-left: 1rem;
     text-transform: uppercase;
 }
-#main-header #main-branding img {
+#header-main-bar #main-branding img {
     width: clamp(15px, 6.5vw, 90px);
 }
 
@@ -39,21 +40,21 @@
     height: inherit;
     align-content: center;
 }
-.large-link, .large-link:visited {
+#header-main-bar .large-link, .large-link:visited {
     height: 100%;
     padding: 0 clamp(2px, 1.2vw, 3rem);
     display: block;
     align-content: center;
 }
 
-.dropdown {
+#header-main-bar .dropdown {
     display: block;
     position: relative;
 }
-.dropdown:hover .dropdown-content {
+#header-main-bar .dropdown:hover .dropdown-content {
     display: grid;
 }
-.dropdown-content {
+#header-main-bar .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--Color_BG_Header);
@@ -62,7 +63,7 @@
     border-bottom-right-radius: 10px;
     overflow: hidden;
 }
-.dropdown-content a {
+#header-main-bar .dropdown-content a {
     font-size: clamp(15px, 2vw, 1.5rem) !important;
     padding: 20px 20px;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug reports</title>
+    <link rel="stylesheet" href="/CSS/style_main.css">
+    <link rel="stylesheet" href="bug-reporting-form.css">
+    <script src="/generate_header_footer.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <section class="content wait-for-header">
+        <form id="bug-report" action="" method="get" class="">
+            <div class="">
+                <label for="game">Choose game</label>
+                <select id="choose-game">
+                    <option value="two-dollar-suits">Two Dollar Suits</option>
+                    <option value="A-Star Theft">A-Star Theft</option>
+                </select>
+            </div>
+            <div class="">
+                <label for="name">Upload crash report</label>
+                <input type="file" name="log" accept=".txt"/>
+            </div>
+
+            <div class="">
+                <label for="email">What did you do when the crash occurred?</label>
+                <textarea name="reproduce" id=""></textarea>
+            </div>
+            <div class="">
+                <input type="submit" value="Send report"/>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

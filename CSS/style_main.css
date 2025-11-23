@@ -24,6 +24,19 @@ body {
     min-height: 100vh;
 }
 
-.link-list {
+.content {
+    max-width: 1200px;
+    justify-self: center;
+}
+
+/* #region General List Styling */
+
+li {
     list-style-type: none;
+}
+
+/* #endregion */
+
+.wait-for-header {
+    visibility: hidden;
 }
