@@ -33,8 +33,16 @@ form input[type="submit"] {
 }
 
 form select {
-    padding: 10px;
+    font-size: 1.5rem;
+    padding: 20px;
     text-align: center;
-    width: 50%;
-    border-radius: 10px;
+    /* width: 50%; */
+    border-radius: 20px;
+    appearance: none;
+}
+
+form select::picker(select) {
+    color: red;
+    border-radius: 20px !important;
+    margin: 10px !important;
 }
