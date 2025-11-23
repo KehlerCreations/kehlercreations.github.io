@@ -1,13 +1,40 @@
 #header-main-bar {
+    padding: 20px 50px;
     display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    column-gap: 5rem;
+    text-wrap-mode: nowrap;
+
+    background-color: var(--Color_BG_Header);
 }
 
-#main-header .kc-logo {
-    width: 50px;
-    height: 50px;
+/* Logo */
+#main-header #main-branding {
+    display: flex;
+    align-items: center;
 }
-
-#main-title {
+#main-header #main-branding h1 {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+}
+#main-header #main-branding img {
+    width: 100px;
+    height: 100%;
 }
 
+/* Navbar */
+#header-main-bar .navbar ul {
+    display: flex;
+    column-gap: 2rem;
+}
+#header-main-bar .navbar ul li {
+}
+#header-main-bar .navbar ul li a, #header-main-bar .navbar ul li a:visited {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}

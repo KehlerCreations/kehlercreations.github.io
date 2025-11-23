@@ -1,27 +1,24 @@
 :root {
-    --ColorSiteBackground: hsl(240, 6%, 17%);
 
-    --ColorBackgroundBlack: #000000;
-    --ColorBackgroundDarkGray: #0f0f0f;
-    --ColorBackgroundGray: rgb(25, 25, 28);
-    --ColorBackgroundLightGray: #29292b;
-    --ColorBackgroundLighterGray: #353535;
-    --ColorBackgroundDarkWhite: #e6e6e6;
-    --ColorBackgroundWhite: #ffffff;
-    --ColorTextWhite: #ffffff;
-    --ColorTextLightGray: #e4e4e4d0;
-    --ColorTextGray: #979797;
-    --ColorTextDarkGray: #212121;
+    --BG_Main_Hue: 240;
+    --BG_Main_Sat: 10%;
 
-    --ColorBackgroundStrongHighlight: rgba(255, 255, 255, 0.5);
-    --ColorBackgroundNormalHighlight: rgba(255, 255, 255, 0.07);
-    --ColorBackgroundSlightHighlight: rgba(255, 255, 255, 0.03);
-    --ColorBackgroundStrongShadow: rgba(0, 0, 0, 0.2);
-    --ColorBackgroundNormalShadow: rgba(0, 0, 0, 0.1);
-    --ColorBackgroundSlightShadow: rgba(0, 0, 0, 0.05);
+    --BG_Main_Val: 17%;
+
+    --BG_Header_Val: 15%;
+
+    --Text_Main_Hue: 0;
+    --Text_Main_Sat: 0%;
+    --Text_Main_Val: 100%;
+
+    --Color_BG_Main: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Main_Val));
+
+    --Color_Text_Main: hsl(var(--Text_Main_Hue), var(--Text_Main_Sat), var(--Text_Main_Val));
 
     --ColorAccentBrightRed: rgb(255, 0, 0);
     --ColorAccentDarkRed: rgb(128, 0, 0);
 
     --ColorInlineLink: var(--ColorAccentBrightRed);
+
+    --Color_BG_Header: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Header_Val));
 }

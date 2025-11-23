@@ -12,7 +12,7 @@
 
 * {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--ColorTextWhite);
+    color: var(--Color_Text_Main);
 
     margin: 0;
     padding: 0;
@@ -20,7 +20,10 @@
 
 body {
     position: static;
-    background-color: var(--ColorSiteBackground);
+    background-color: var(--Color_BG_Main);
     min-height: 100vh;
 }
 
+.link-list {
+    list-style-type: none;
+}
