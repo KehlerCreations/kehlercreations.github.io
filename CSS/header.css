@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.kc-logo {
+#main-header .kc-logo {
     width: 50px;
     height: 50px;
 }
@@ -10,3 +10,4 @@
 #main-title {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 }
+
