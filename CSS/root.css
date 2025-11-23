@@ -1,0 +1,27 @@
+:root {
+    --ColorSiteBackground: hsl(240, 6%, 17%);
+
+    --ColorBackgroundBlack: #000000;
+    --ColorBackgroundDarkGray: #0f0f0f;
+    --ColorBackgroundGray: rgb(25, 25, 28);
+    --ColorBackgroundLightGray: #29292b;
+    --ColorBackgroundLighterGray: #353535;
+    --ColorBackgroundDarkWhite: #e6e6e6;
+    --ColorBackgroundWhite: #ffffff;
+    --ColorTextWhite: #ffffff;
+    --ColorTextLightGray: #e4e4e4d0;
+    --ColorTextGray: #979797;
+    --ColorTextDarkGray: #212121;
+
+    --ColorBackgroundStrongHighlight: rgba(255, 255, 255, 0.5);
+    --ColorBackgroundNormalHighlight: rgba(255, 255, 255, 0.07);
+    --ColorBackgroundSlightHighlight: rgba(255, 255, 255, 0.03);
+    --ColorBackgroundStrongShadow: rgba(0, 0, 0, 0.2);
+    --ColorBackgroundNormalShadow: rgba(0, 0, 0, 0.1);
+    --ColorBackgroundSlightShadow: rgba(0, 0, 0, 0.05);
+
+    --ColorAccentBrightRed: rgb(255, 0, 0);
+    --ColorAccentDarkRed: rgb(128, 0, 0);
+
+    --ColorInlineLink: var(--ColorAccentBrightRed);
+}
