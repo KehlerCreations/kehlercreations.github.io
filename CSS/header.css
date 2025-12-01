@@ -1,7 +1,7 @@
 #header-main-bar {
     height: 130px;
     padding: 0px clamp(10px, 5vw, 100px);
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     
     justify-content: space-between;
@@ -18,7 +18,7 @@
     align-items: center;
 }
 #header-main-bar #main-branding h1 {
-    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    font-family: var(--KeyFont);
     font-size: clamp(15px, 3vw, 3rem);
     padding-left: 1rem;
     text-transform: uppercase;
@@ -73,7 +73,6 @@
     font-size: clamp(15px, 2.5vw, 2rem);
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none;
 }
 #header-main-bar a:hover {
     background-color: var(--Color_BG_Hover);

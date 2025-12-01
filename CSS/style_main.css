@@ -1,6 +1,6 @@
 @import "root.css";
 @import "header.css";
-/* @import url("https://use.typekit.net/ulm3zcb.css"); */
+@import url("https://use.typekit.net/ulm3zcb.css");
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
@@ -25,18 +25,71 @@ body {
 }
 
 .content {
-    max-width: 1200px;
+    min-width: clamp(200px, 40vw, 1000px);
+    max-width: 1000px;
     justify-self: center;
+
+    transition: opacity .1s;
 }
 
-/* #region General List Styling */
+.section-heading {
+    font-family: var(--KeyFont);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-family: var(--KeyFont);
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* #region List and Link Styling */
 
 li {
     list-style-type: none;
 }
 
+.large-list {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    border: 1px solid black;
+
+    a {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        background-color: var(--Color_BG_Header);
+        padding: 20px 20px;
+
+        border-radius: 10px;
+    }
+
+    a:hover {
+
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+/* #endregion */
+
+/* #region Content Alignment */
+
+.centered {
+    text-align: center;
+    justify-items: center;
+}
+
 /* #endregion */
 
 .wait-for-header {
-    visibility: hidden;
+    opacity: 0;
 }
