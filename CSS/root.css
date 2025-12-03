@@ -5,7 +5,7 @@
     --BG_Main_Hue: 240;
     --BG_Main_Sat: 10%;
 
-    --BG_Main_Val: 17%;
+    --BG_Main_Val: 22%;
     --BG_Header_Val: 15%;
     --BG_Hover_Val: 22%;
 
@@ -25,6 +25,7 @@
     --ColorInlineLink: var(--ColorAccentBrightRed);
 
     --KeyFont: Bahnschrift, Arial, Helvetica, sans-serif;
+    --BaseFont: Arial, Helvetica, sans-serif;
 
     
 }

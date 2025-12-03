@@ -24,6 +24,20 @@ body {
     min-height: 100vh;
 }
 
+.background-image {
+    z-index: -1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    justify-self: center;
+
+    width: clamp(1000px, 100%, 2000px);
+
+    /* opacity: .5; */
+}
+
 .content {
     min-width: clamp(200px, 40vw, 1000px);
     max-width: 1000px;
