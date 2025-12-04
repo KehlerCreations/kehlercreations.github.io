@@ -22,6 +22,7 @@ body {
     position: static;
     background-color: var(--Color_BG_Main);
     min-height: 100vh;
+    width: 100vw;
 }
 
 .background-image {
@@ -32,10 +33,14 @@ body {
     right: 0;
 
     justify-self: center;
+    overflow-x: hidden;
+    object-fit: cover;
 
-    width: clamp(1000px, 100%, 2000px);
+    width: clamp(0px, 100%, 2000px);
+    height: 700px;
 
-    /* opacity: .5; */
+    filter: brightness(.7);
+    box-shadow: 0 0 70px black;
 }
 
 .content {
@@ -69,8 +74,6 @@ li {
     display: flex;
     flex-direction: column;
     gap: 50px;
-
-    border: 1px solid black;
 
     a {
         display: block;
