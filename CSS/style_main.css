@@ -39,28 +39,53 @@ body {
     width: clamp(0px, 100%, 2000px);
     height: 700px;
 
-    filter: brightness(.7);
+    filter: brightness(.65);
     box-shadow: 0 0 70px black;
 }
 
 .content {
-    min-width: clamp(200px, 40vw, 1000px);
+    min-width: clamp(150px, 40vw, 1000px);
     max-width: 1000px;
     justify-self: center;
 
     transition: opacity .1s;
+
+    margin: 0 10px;
+    margin-bottom: 100px;
+}
+.content:last-of-type {
+    margin-bottom: unset;
+
+    
 }
 
 .section-heading {
+    display: flex;
+    justify-content: center;
+}
+
+.section-heading div {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.section-heading div span {
+    display: inline;
+    text-align: left;
+    
     font-family: var(--KeyFont);
     font-size: 3rem;
     text-transform: uppercase;
+    text-wrap:balance;
+    line-height: 3rem;
 }
 
 .section-subtitle {
     font-family: var(--KeyFont);
     font-size: 1.5rem;
     font-weight: normal;
+    text-wrap-style:balance;
 }
 
 /* #region List and Link Styling */
