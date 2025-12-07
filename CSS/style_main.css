@@ -1,5 +1,6 @@
 @import "root.css";
 @import "header.css";
+@import "footer.css";
 @import url("https://use.typekit.net/ulm3zcb.css");
 
 /* SCROLLBAR */
@@ -55,23 +56,10 @@ body {
 }
 .content:last-of-type {
     margin-bottom: unset;
-
-    
 }
 
 .section-heading {
-    display: flex;
-    justify-content: center;
-}
-
-.section-heading div {
     display: block;
-    width: fit-content;
-    margin-inline: auto;
-}
-
-.section-heading div span {
-    display: inline;
     text-align: left;
     
     font-family: var(--KeyFont);
@@ -85,7 +73,6 @@ body {
     font-family: var(--KeyFont);
     font-size: 1.5rem;
     font-weight: normal;
-    text-wrap-style:balance;
 }
 
 /* #region List and Link Styling */
@@ -128,6 +115,10 @@ a {
 .centered {
     text-align: center;
     justify-items: center;
+}
+
+.image-grid {
+    display: grid;
 }
 
 /* #endregion */

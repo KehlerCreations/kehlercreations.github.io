@@ -27,6 +27,7 @@
 }
 #header-main-bar #main-branding img {
     width: clamp(20px, 3vw, 90px);
+    user-select: none;
 }
 
 /* Navbar */
@@ -80,16 +81,13 @@
     background-color: var(--Color_BG_Hover);
 }
 
-#header-main-bar .image-list a:hover {
-    filter: brightness(1.2);
-}
-
 .image-list {
-    
     gap: clamp(0px, .8vw, 25px);
+    user-select: none;
 
     li {
         width: clamp(10px, 3vw, 50px);
+        aspect-ratio: 1;
     }
 
     a {
@@ -97,7 +95,10 @@
         width: 100%;
         height: 100%;
         border-radius: 100%;
-        
+
+        :hover {
+            filter: brightness(1.2);
+        }
     }
  
     img {
@@ -105,6 +106,5 @@
         height: 100%;
         overflow: hidden;
         border-radius: 100%;
-
     }
 }

@@ -7,6 +7,15 @@ fetch("/header.html")
     header.append(content);
 });
 
+const footer = document.getElementById("main-footer");
+fetch("/footer.html")
+  .then((response) => response.text())
+  .then((text) => new DOMParser().parseFromString(text, "text/html"))
+  .then((dom) => dom.getElementById("footer-main-bar"))
+  .then((content) => {
+    footer.append(content);
+});
+
 setTimeout(()=>{
   let waitingElements = document.querySelectorAll(".wait-for-header");
   waitingElements.forEach(element => {
