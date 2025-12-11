@@ -1,23 +1,23 @@
 .contact-forms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fit, fit-content()); */
+    gap: 100px;
 }
 
 .social-media .contact-image-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 25px;
 
     aspect-ratio: 1;
 
     li {
-        width: 100%;
+        width: 100px;
         aspect-ratio: 1;
     }
     a {
-        width: 100%;
-        height: 100%;
         border-radius: 100%;
     }
     img {
