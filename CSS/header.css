@@ -117,15 +117,29 @@
     font-size: 50px;
     color: white;
     position: fixed;
-    right: 0;
+    right: 10px;
     top: 0;
     user-select: none;
 }
 
+#mobile-body-cover {
+    display: none;
+}
+
 @media (width < 700px) {
     #mobile-reveal-header {
-        display :block;
+        display: block;
+        z-index: 15;
     }
+    #mobile-body-cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .2);
+    }
+
     #header-main-bar {
         display: none;
         position: fixed;
@@ -133,6 +147,10 @@
         right: 0;
         min-width: clamp(40vw, 300px, 70vw);
         height: 100vh;
+        background-color: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(40px);
+
+        z-index: 10;
     }
 
     #header-main-bar * {
@@ -157,6 +175,7 @@
         gap: 20px;
         width:100% !important;
         height: 50px !important;
+        margin-top: 20px;
 
         li {
             width: 100% !important;
@@ -164,6 +183,9 @@
         }
     }
 
+    #header-main-bar .text-list a:hover {
+        background-color: unset;
+    }
 
     body {
         margin-top: 50px;

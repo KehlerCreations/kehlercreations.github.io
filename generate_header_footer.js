@@ -14,6 +14,13 @@ fetch("/header.html")
   .then((content) => {
     header.append(content);
 });
+fetch("/header.html")
+  .then((response) => response.text())
+  .then((text) => new DOMParser().parseFromString(text, "text/html"))
+  .then((dom) => dom.getElementById("mobile-body-cover"))
+  .then((content) => {
+    header.append(content);
+});
 
 const footer = document.getElementById("main-footer");
 fetch("/footer.html")
@@ -33,17 +40,42 @@ setTimeout(()=>{
 
 // Interactive mobile button
 setTimeout(() => {
+
+  
+
   let button = document.getElementById("mobile-reveal-header");
   button.activated = false;
+  
+  let bodyCover = document.getElementById("mobile-body-cover");
+
+  let headerMainBar = document.getElementById("header-main-bar");
+  
+  let revealHeader = function() {
+    button.activated = true;
+    headerMainBar.style.display = "grid";
+    bodyCover.style.display = "block";
+  }
+  let hideHeader = function() {
+    button.activated = false;
+    headerMainBar.style.display = "none";
+    bodyCover.style.display = "none";
+  }
+
   button.addEventListener("click", () => {
-    let headerMainBar = document.getElementById("header-main-bar");
-    if(button.activated) {
-      button.activated = false;
-      headerMainBar.style.display = "none";
-    } else {
-      button.activated = true;
-      headerMainBar.style.display = "grid";
-    }
     
+    if(button.activated) {
+      hideHeader();
+    } else {
+      revealHeader();
+    }
   })
+  
+  button.addEventListener("change", () => {
+    hideHeader();
+  })
+
+  bodyCover.addEventListener("click", () => {
+    hideHeader();
+  })
+  
 }, 50)
