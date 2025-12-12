@@ -26,22 +26,32 @@ body {
     width: 100%;
 }
 
-.background-image {
+.background {
     z-index: -1000;
+    width: 100%;
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+}
 
-    justify-self: center;
-    overflow-x: hidden;
-    object-fit: cover;
+.background-images {
+    position: relative;
+    left: -50%;
 
-    width: clamp(0px, 100%, 2000px);
-    height: 700px;
+    display: flex;
+
+    width: 150%;
+    height: 1500px;
 
     filter: brightness(.65);
-    box-shadow: 0 0 70px black;
+}
+
+.background-images .background-image {
+    width: 200%;
+    height: 100%;
+    clip-path: polygon(0 100%, 50% 0, 100% 0, 50% 100%);
+    object-fit: cover;
 }
 
 .content {

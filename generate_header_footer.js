@@ -52,13 +52,13 @@ setTimeout(() => {
   
   let revealHeader = function() {
     button.activated = true;
-    headerMainBar.style.display = "grid";
-    bodyCover.style.display = "block";
+    headerMainBar.classList.remove("mobile-hidden");
+    bodyCover.classList.remove("mobile-hidden");
   }
   let hideHeader = function() {
     button.activated = false;
-    headerMainBar.style.display = "none";
-    bodyCover.style.display = "none";
+    headerMainBar.classList.add("mobile-hidden");
+    bodyCover.classList.add("mobile-hidden");
   }
 
   button.addEventListener("click", () => {
