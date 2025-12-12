@@ -33,18 +33,19 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    user-select: none;
 }
 
 .background-images {
     position: relative;
-    left: -50%;
+    left: min(-60vw, -50%);
 
     display: flex;
 
-    width: 150%;
+    width: max(1500px, 150%);
     height: 1500px;
 
-    filter: brightness(.65);
+    filter: brightness(.5);
 }
 
 .background-images .background-image {
@@ -83,6 +84,7 @@ body {
     font-family: var(--KeyFont);
     font-size: 1.5rem;
     font-weight: normal;
+    text-wrap: balance;
 }
 
 /* #region List and Link Styling */

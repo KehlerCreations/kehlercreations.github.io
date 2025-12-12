@@ -14,7 +14,7 @@
     --Text_Main_Val: 100%;
 
     --Color_BG_Main: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Main_Val));
-    --Color_BG_Header: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Header_Val));
+    --Color_BG_Header: rgba(0, 0, 0, .15);
     --Color_BG_Hover: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Hover_Val));
 
     --Color_Text_Main: hsl(var(--Text_Main_Hue), var(--Text_Main_Sat), var(--Text_Main_Val));

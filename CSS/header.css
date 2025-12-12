@@ -13,8 +13,7 @@
     column-gap: clamp(5px, 2vw, 5rem);
     text-wrap-mode: nowrap;
 
-    /* background-color: var(--Color_BG_Header); */
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--Color_BG_Header);
     backdrop-filter: blur(40px);
 }
 #header-main-bar .link-navbar {
@@ -62,6 +61,7 @@
 #header-main-bar .dropdown {
     display: block;
     position: relative;
+    backdrop-filter: blur(40px);
 }
 #header-main-bar .dropdown:hover .dropdown-content {
     display: grid;
@@ -69,8 +69,9 @@
 #header-main-bar .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--Color_BG_Header);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226);
+    /* background-color: var(--Color_BG_Header); */
+    backdrop-filter: blur(40px);
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226); */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow: hidden;
@@ -87,7 +88,7 @@
     text-transform: uppercase;
 }
 #header-main-bar .text-list a:hover {
-    background-color: var(--Color_BG_Hover);
+    /* background-color: var(--Color_BG_Hover); */
 }
 
 .image-list {
@@ -136,7 +137,7 @@
     display: block;
 }
 
-@media (width < 700px) {
+@media (width < 800px) {
     #mobile-reveal-header {
         display: block;
         z-index: 15;
@@ -155,9 +156,10 @@
         position: fixed;
         top: 0;
         right: 0;
+        left: unset;
         min-width: clamp(40vw, 300px, 70vw);
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.15);
+        background-color: var(--Color_BG_Header);
         backdrop-filter: blur(40px);
 
         z-index: 10;
@@ -202,7 +204,7 @@
     }
 
     body {
-        margin-top: 50px;
+        margin-top: 30vh;
     }
 }
 
