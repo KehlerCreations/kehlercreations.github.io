@@ -41,8 +41,6 @@ setTimeout(()=>{
 // Interactive mobile button
 setTimeout(() => {
 
-  
-
   let button = document.getElementById("mobile-reveal-header");
   button.activated = false;
   
@@ -78,4 +76,4 @@ setTimeout(() => {
     hideHeader();
   })
   
-}, 50)
+}, 100)

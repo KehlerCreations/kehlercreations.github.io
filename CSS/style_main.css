@@ -47,7 +47,7 @@ body {
 
     display: flex;
 
-    width: max(1500px, 150%);
+    width: max(1800px, 150%);
     height: 1500px;
 
     filter: brightness(.5);
@@ -58,6 +58,16 @@ body {
     height: 100%;
     clip-path: polygon(0 100%, 50% 0, 100% 0, 50% 100%);
     object-fit: cover;
+}
+
+.background-images.cover-art {
+}
+.background-images.cover-art .background-image {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0%;
+    top: 0%;
 }
 
 .section-background {
@@ -72,7 +82,7 @@ body {
     max-width: 1000px;
     justify-self: center;
 
-    transition: opacity .1s;
+    transition: opacity .2s;
 
     margin: 0 10px;
     margin-bottom: 100px;
