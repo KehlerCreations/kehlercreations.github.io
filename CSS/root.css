@@ -14,15 +14,17 @@
     --Text_Main_Val: 100%;
 
     --Color_BG_Main: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Main_Val));
-    --Color_BG_Header: rgba(0, 0, 0, .15);
-    --Color_BG_Hover: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Hover_Val));
+    --Color_BG_Header: rgba(0, 0, 0, .05);
+    --Color_BG_Hover: hsla(0, 0%, 50%, 0.15);
 
     --Color_Text_Main: hsl(var(--Text_Main_Hue), var(--Text_Main_Sat), var(--Text_Main_Val));
 
-    --ColorAccentBrightRed: rgb(255, 0, 0);
-    --ColorAccentDarkRed: rgb(128, 0, 0);
+    --ColorAccentBrightRed: rgb(111, 0, 255);
+    --ColorAccentDarkRed: rgb(32, 0, 70);
 
     --ColorInlineLink: var(--ColorAccentBrightRed);
+
+    --BlurStrength: 40px;
 
     --KeyFont: Bahnschrift, Arial, Helvetica, sans-serif;
     --BaseFont: Arial, Helvetica, sans-serif;

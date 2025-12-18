@@ -1,9 +1,8 @@
 #header-main-bar {
     height: 100px;
-    padding: 0px clamp(5px, 5vw, 100px);
+    padding: 0px clamp(5px, 2vw, 100px);
     margin-bottom: 100px;
     display: flex;
-    /* position: fixed;  */
     top: 0px;
     left: 0px;
     z-index: 1;
@@ -14,8 +13,22 @@
     text-wrap-mode: nowrap;
 
     background-color: var(--Color_BG_Header);
-    backdrop-filter: blur(40px);
 }
+#header-main-bar * {
+    margin: 0;
+}
+
+#header-main-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    backdrop-filter: blur(var(--BlurStrength));
+    z-index: -1;
+}
+
 #header-main-bar .link-navbar {
     margin-left: auto;
 }
@@ -58,23 +71,20 @@
     align-content: center;
 }
 
-#header-main-bar .dropdown {
-    display: block;
-    position: relative;
-    backdrop-filter: blur(40px);
-}
+
 #header-main-bar .dropdown:hover .dropdown-content {
     display: grid;
 }
 #header-main-bar .dropdown-content {
     display: none;
     position: absolute;
-    /* background-color: var(--Color_BG_Header); */
-    backdrop-filter: blur(40px);
-    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226); */
+    background-color: var(--Color_BG_Header);
+    backdrop-filter: blur(var(--BlurStrength));
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow: hidden;
+    z-index: 1000;
 }
 #header-main-bar .dropdown-content a {
     font-size: clamp(15px, 2vw, 1.5rem) !important;
@@ -88,12 +98,16 @@
     text-transform: uppercase;
 }
 #header-main-bar .text-list a:hover {
-    /* background-color: var(--Color_BG_Hover); */
+    background-color: var(--Color_BG_Hover);
 }
 
 .image-list {
     gap: clamp(0px, .8vw, 25px);
     user-select: none;
+
+    @media (width < 1450px) {
+        display: none !important;
+    }
 
     li {
         width: clamp(10px, 3vw, 50px);
@@ -160,7 +174,7 @@
         min-width: clamp(40vw, 300px, 70vw);
         height: 100vh;
         background-color: var(--Color_BG_Header);
-        backdrop-filter: blur(40px);
+        backdrop-filter: blur(var(--BlurStrength));
 
         z-index: 10;
     }
