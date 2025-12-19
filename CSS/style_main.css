@@ -169,3 +169,7 @@ a {
 .wait-for-header {
     opacity: 0;
 }
+
+.long-br {
+    margin-top: 700px;
+}
