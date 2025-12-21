@@ -10,7 +10,7 @@ fetch("/header.html")
 fetch("/header.html")
   .then((response) => response.text())
   .then((text) => new DOMParser().parseFromString(text, "text/html"))
-  .then((dom) => dom.getElementById("mobile-reveal-header"))
+  .then((dom) => dom.getElementById("mobile-header"))
   .then((content) => {
     header.append(content);
 });

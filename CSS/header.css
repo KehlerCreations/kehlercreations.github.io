@@ -136,14 +136,22 @@
 
 /* #region Mobile formatting */
 
-#mobile-reveal-header {
+#mobile-header {
+    width: 100%;
     display: none;
+    position: fixed;
+    top: 0;
+    z-index: 15;
+
+    * {
+        margin: 0 10px;
+    }
+}
+
+#mobile-reveal-header {
     font-size: 50px;
     color: white;
-    padding: 10px;
-    position: fixed;
-    right: 0;
-    top: 0;
+    /* padding-right: 10px; */
     user-select: none;
 }
 
@@ -152,10 +160,12 @@
 }
 
 @media (width < 800px) {
-    #mobile-reveal-header {
-        display: block;
-        z-index: 15;
+    #mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
+    
     #mobile-body-cover {
         position: fixed;
         top: 0;
@@ -163,6 +173,12 @@
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, .2);
+    }
+    
+
+    .kc-logo {
+        width: 50px;
+        /* height: 50px; */
     }
 
     #header-main-bar {
