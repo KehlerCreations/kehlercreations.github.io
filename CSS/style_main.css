@@ -49,11 +49,11 @@ h1 {
 
 .home .background-images {
     position: relative;
-    left: min(-80vw, -60%);
+    left: -100%;
 
     display: flex;
 
-    width: max(2000px, 190%);
+    width: max(4000px, 200%);
     height: 1500px;
 
     filter: brightness(.5);
@@ -64,6 +64,7 @@ h1 {
     height: 100%;
     clip-path: polygon(0 100%, 50% 0, 100% 0, 50% 100%);
     object-fit: cover;
+    position: relative;
 }
 
 .background-images.cover-art .background-image {
@@ -194,8 +195,4 @@ a {
 
 .wait-for-header {
     opacity: 0;
-}
-
-.long-br {
-    margin-top: 700px;
 }
