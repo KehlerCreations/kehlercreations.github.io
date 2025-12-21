@@ -11,13 +11,13 @@
     /* background-color: rgb(26, 26, 26); */
 }
 
+/* #region Change tag default styling */
+
 * {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--Color_Text_Main);
 
-    /* margin: 0; */
     padding: 0;
-
     
 }
 
@@ -31,6 +31,12 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    margin: 0;
+}
+
+/* #endregion */
+
 .background {
     z-index: -1000;
     width: 100%;
@@ -43,11 +49,11 @@ body {
 
 .home .background-images {
     position: relative;
-    left: min(-60vw, -50%);
+    left: min(-80vw, -60%);
 
     display: flex;
 
-    width: max(1800px, 150%);
+    width: max(2000px, 190%);
     height: 1500px;
 
     filter: brightness(.5);
@@ -60,8 +66,6 @@ body {
     object-fit: cover;
 }
 
-.background-images.cover-art {
-}
 .background-images.cover-art .background-image {
     width: 100px;
     height: 100px;
@@ -78,14 +82,13 @@ body {
 }
 
 .content {
-    min-width: clamp(150px, 40vw, 1000px);
-    max-width: 1000px;
+    width: clamp(150px, 80vw, 1000px);
     justify-self: center;
 
     transition: opacity .2s;
 
-    margin: 0 10px;
-    margin-bottom: 100px;
+    margin: 0 0;
+    margin-bottom: 200px;
 }
 .content:last-of-type {
     margin-bottom: unset;
@@ -107,6 +110,29 @@ body {
     font-size: 1.5rem;
     font-weight: normal;
     text-wrap: balance;
+}
+
+.game-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+    align-items: center;
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    p {
+        text-wrap: balance;
+    }
+}
+
+.game-trailer {
+    width: 100%;
+    aspect-ratio: 1.778;
+
+    border-radius: 15px;
 }
 
 /* #region List and Link Styling */
