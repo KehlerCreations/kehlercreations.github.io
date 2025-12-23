@@ -16,6 +16,10 @@
     --Color_BG_Main: hsl(var(--BG_Main_Hue), var(--BG_Main_Sat), var(--BG_Main_Val));
     --Color_BG_Header: rgba(0, 0, 0, .05);
     --Color_BG_Hover: hsla(0, 0%, 50%, 0.15);
+    
+    --Color_BG_Button: rgba(199, 199, 199, 0.05);
+    --Color_BG_ButtonHover: rgba(255, 255, 255, 0.1);
+    --Color_BG_ButtonActive: rgba(104, 104, 104, 0.15);
 
     --Color_Text_Main: hsl(var(--Text_Main_Hue), var(--Text_Main_Sat), var(--Text_Main_Val));
 

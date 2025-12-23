@@ -1,0 +1,32 @@
+.about-main {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.about-info {
+    margin-bottom: 100px;
+    width: clamp(350px, 50%, 1000px);
+    justify-self: center;
+}
+
+.about-shortcuts {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    position: fixed;
+    left: 20px;
+    top: 100px;
+
+    li {
+        margin: 50px 10px;
+    }
+
+    button {
+        padding: 10px;
+        border-radius: 25px;
+    }
+    
+}

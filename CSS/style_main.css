@@ -86,10 +86,14 @@ h1 {
     width: clamp(150px, 80vw, 1000px);
     justify-self: center;
 
-    transition: opacity .2s;
+    transition: opacity .3s;
 
     margin: 0 0;
-    margin-bottom: 200px;
+    margin-bottom: 250px;
+    
+    p {
+        text-wrap: balance;
+    }
 }
 .content:last-of-type {
     margin-bottom: unset;
@@ -123,17 +127,15 @@ h1 {
         width: 100%;
         border-radius: 15px;
     }
-
-    p {
-        text-wrap: balance;
-    }
 }
 
 .game-trailer {
-    width: 100%;
+    width: clamp(150px, 80vw, 1000px);
     aspect-ratio: 1.778;
 
     border-radius: 15px;
+
+
 }
 
 /* #region List and Link Styling */
@@ -172,10 +174,21 @@ a {
 .link-button {
     /* font-weight: bold; */
 
-    background-color: var(--Color_BG_Header);
+    display: block;
+    background-color: var(--Color_BG_Button);
     backdrop-filter: blur(var(--BlurStrength));
     padding: 20px;
     border-radius: 100px 100px;
+
+    user-select: none;
+
+    transition: background-color .1s;
+}
+.link-button:hover {
+    background-color: var(--Color_BG_ButtonHover);
+}
+.link-button:active {
+    background-color: var(--Color_BG_ButtonActive);
 }
 
 /* #endregion */
