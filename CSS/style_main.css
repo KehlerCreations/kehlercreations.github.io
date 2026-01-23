@@ -49,7 +49,7 @@ h1 {
 
 .home .background-images {
     position: relative;
-    left: -100%;
+    left: -800px;
 
     display: flex;
 
