@@ -1,32 +1,33 @@
-.about-main {
+#about-main {
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: repeat(3, 100vw);
+
+    position: relative;
+
+    transition: .5s;
 }
 
-.about-info {
-    margin-bottom: 100px;
-    width: clamp(350px, 50%, 1000px);
+#about-main > section {
+    width: clamp(200px, 90vw, 800px);
     justify-self: center;
+    transition: opacity .5s;
 }
 
 .about-shortcuts {
-    height: calc(100vh - 100px);
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-    position: fixed;
-    left: 20px;
-    top: 100px;
-
-    li {
-        margin: 50px 10px;
-    }
+    justify-content: space-evenly;
+    margin-bottom: 100px;
 
     button {
         padding: 10px;
-        border-radius: 25px;
+        border-radius: 10px;
+        border-style:hidden;
+
+        font-family: var(--KeyFont);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
     }
     
 }
