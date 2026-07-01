@@ -1,0 +1,72 @@
+#about-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#about-main {
+    display: grid;
+    grid-template-columns: repeat(3, 100vw);
+
+    position: relative;
+
+    transition: .5s;
+}
+
+#about-main > section {
+    width: clamp(200px, 90vw, 800px);
+    justify-self: center;
+    transition: opacity .5s;
+}
+
+.about-shortcuts {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+
+    button {
+        background-color: var();
+        padding: 10px 20px;
+        border-radius: 50px;
+        border-style:hidden;
+
+        font-family: var(--KeyFont);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+/* #region History images */
+
+.presentation-highlight::after {
+    content: url("https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/mouse-click-icon.png");
+    zoom: 0.03;
+    filter: invert();
+}
+
+.presentation-highlight:hover::after {
+    background-size:cover;
+    content: "";
+    display: block;
+    width: clamp(100px, 50vw, 500px);
+    aspect-ratio: 1.5;
+    zoom: unset;
+    filter: unset;
+
+    position: absolute;
+    left: auto;
+    right: auto;
+    border-radius: 10px;
+
+    
+}
+
+#history-a-star-theft:hover::after {
+    background-image: url("https://media.indiedb.com/images/members/3/2009/2008420/profile/AST_Screenshot_40.png");
+}
+#history-first-review:hover::after {
+    background-image: url("Images/first review.png");
+}
+
+/* #endregion */

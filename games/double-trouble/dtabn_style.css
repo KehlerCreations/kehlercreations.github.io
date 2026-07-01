@@ -1,0 +1,31 @@
+.logo {
+  display: block;
+  width: clamp(200px, 80%, 550px);
+  position: absolute;
+  top: 100px;
+  justify-self: center;
+  object-fit: cover;
+
+  z-index: -500;
+}
+
+.dtabn-background {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -750;
+}
+
+.coming-soon {
+  margin-top: 100px;
+  padding: 0;
+  text-shadow: 0 0 40px black;
+}
+
+.below-dtabn-logo {
+  margin-top: clamp(230px, 45vw, 400px);
+}
