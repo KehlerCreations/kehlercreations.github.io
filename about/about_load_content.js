@@ -9,9 +9,9 @@ function LoadContent(parent_id, target_file, target_id) {
   });
 }
 
-LoadContent("about-me", "about_me.html");
-LoadContent("history", "history.html");
-LoadContent("portfolio", "portfolio.html");
+LoadContent("portfolio-content-container", "game_design.html");
+
+const portfolioContentContainer = document.querySelector("#portfolio-content-container");
 
 let aboutMain = document.getElementById("about-main");
 let aboutMe = document.getElementById("about-me");
@@ -19,27 +19,11 @@ let history = document.getElementById("history");
 let portfolio = document.getElementById("portfolio");
 
 /// Button functionality
-let buttonAboutMe = document.getElementById("btn-about-me");
-buttonAboutMe.addEventListener("click", ()=>{
-  aboutMain.style.left = "0vw";
-  aboutMe.style.opacity = "1";
-  history.style.opacity = "0";
-  portfolio.style.opacity = "0";
+let portfolioButtons = document.querySelectorAll(".btn-portfolio-category");
+portfolioButtons.forEach(element => {
+  element.addEventListener("click", ()=>{
+    portfolioContentContainer.innerHTML = ``;
+    let filename = element.getAttribute("category") + ".html";
+    LoadContent("portfolio-content-container", filename);
+  });
 });
-
-let buttonHistory = document.getElementById("btn-history");
-buttonHistory.addEventListener("click", ()=>{
-  aboutMain.style.left = "-100vw";
-  history.style.opacity = "1";
-  aboutMe.style.opacity = "0";
-  portfolio.style.opacity = "0";
-});
-
-let buttonPortfolio = document.getElementById("btn-portfolio");
-buttonPortfolio.addEventListener("click", ()=>{
-  aboutMain.style.left = "-200vw";
-  portfolio.style.opacity = "1";
-  aboutMe.style.opacity = "0";
-  history.style.opacity = "0";
-});
-
