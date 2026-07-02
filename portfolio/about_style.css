@@ -1,72 +1,134 @@
 #about-container {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 #about-main {
-    display: grid;
-    grid-template-columns: repeat(3, 100vw);
+  display: grid;
+  grid-template-columns: repeat(3, 100vw);
 
-    position: relative;
+  position: relative;
 
-    transition: .5s;
+  transition: .5s;
 }
 
-#about-main > section {
-    width: clamp(200px, 90vw, 800px);
-    justify-self: center;
-    transition: opacity .5s;
+#about-main>section {
+  width: clamp(200px, 90vw, 800px);
+  justify-self: center;
+  transition: opacity .5s;
 }
 
 .about-shortcuts {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
 
-    button {
-        background-color: var();
-        padding: 10px 20px;
-        border-radius: 50px;
-        border-style:hidden;
+
+
+  & li {
+    aspect-ratio: 2;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    & :hover {
+      & img {
+        scale: 1.05;
+      }
+    }
+
+    & button {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      
+      background-color: transparent;
+      border: 2px solid white;
+      overflow: hidden;
+      position: relative;
+
+      & h3 {
+        width: 100%;
+        height: 100%;
+        margin: 0;
 
         font-family: var(--KeyFont);
-        font-size: 1.2rem;
+        font-size: 2.5vw;
         text-transform: uppercase;
         font-weight: bold;
+
+        position: absolute;
+        text-align: center;
+        top: 38%;
+
+        text-shadow: 1px 2px 3px black;
+      }
+
+      & img {
+        /* display: none; */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        z-index: -1;
+
+        user-select: none;
+        -webkit-user-drag: none;
+        transition: scale .5s ease;
+      }
     }
+  }
+
 }
 
 /* #region History images */
 
 .presentation-highlight::after {
-    content: url("https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/mouse-click-icon.png");
-    zoom: 0.03;
-    filter: invert();
+  content: url("https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/mouse-click-icon.png");
+  zoom: 0.03;
+  filter: invert();
 }
 
 .presentation-highlight:hover::after {
-    background-size:cover;
-    content: "";
-    display: block;
-    width: clamp(100px, 50vw, 500px);
-    aspect-ratio: 1.5;
-    zoom: unset;
-    filter: unset;
+  background-size: cover;
+  content: "";
+  display: block;
+  width: clamp(100px, 50vw, 500px);
+  aspect-ratio: 1.5;
+  zoom: unset;
+  filter: unset;
 
-    position: absolute;
-    left: auto;
-    right: auto;
-    border-radius: 10px;
+  position: absolute;
+  left: auto;
+  right: auto;
+  border-radius: 10px;
 
-    
+
 }
 
 #history-a-star-theft:hover::after {
-    background-image: url("https://media.indiedb.com/images/members/3/2009/2008420/profile/AST_Screenshot_40.png");
+  background-image: url("https://media.indiedb.com/images/members/3/2009/2008420/profile/AST_Screenshot_40.png");
 }
+
 #history-first-review:hover::after {
-    background-image: url("Images/first review.png");
+  background-image: url("Images/first review.png");
 }
 
 /* #endregion */
+
+@media (width < 800px) {
+  .about-shortcuts {
+    grid-template-columns: 1fr;
+
+    & li {
+      aspect-ratio: 4;
+    }
+    
+    & h3 {
+      font-size: 7vw !important;
+    }
+  }
+}
