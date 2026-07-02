@@ -29,6 +29,10 @@ body {
     margin: 0;
 
     overflow-x: hidden;
+    
+    &.body-no-scroll {
+      overflow-y: hidden;
+    }
 }
 
 h1 {

@@ -1,30 +1,81 @@
-#about-container {
+#portfolio-container {
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+
+  &.hidden {
+    visibility: hidden;
+  }
 }
 
-#about-main {
+#btn-exit-portfolio {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 30px;
+  
+  font-weight: bold;
+  scale: 2;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.section-heading {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+#portfolio-content {
+  padding: 0px 100px;
+  height: 100%;
+
+  overflow-y: scroll;
+}
+
+.portfolio-artifacts {
   display: grid;
-  grid-template-columns: repeat(3, 100vw);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(50px, 5vw, 300px);
 
-  position: relative;
+  & .portfolio-artifact {
+    /* border: 2px solid white; */
+    background-color: rgba(255, 255, 255, 0.144);
+    border-radius: 50px 50px 25px 25px;
+    overflow: hidden;
 
-  transition: .5s;
+    img, embed {
+      width: 100%;
+      aspect-ratio: 2;
+      object-fit: cover;
+    }
+
+    h3, p {
+      padding: 0 20px;
+    }
+  }
 }
 
-#about-main>section {
+#portfolio-main>section {
   width: clamp(200px, 90vw, 800px);
   justify-self: center;
   transition: opacity .5s;
 }
 
-.about-shortcuts {
+.portfolio-shortcuts {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-self: center;
 
-
+  font-size: 2.5vw;
+  
+  transition: grid-template-columns 1s;
 
   & li {
     aspect-ratio: 2;
@@ -48,13 +99,15 @@
       overflow: hidden;
       position: relative;
 
+      font-size: 1em;
+
       & h3 {
         width: 100%;
         height: 100%;
         margin: 0;
 
         font-family: var(--KeyFont);
-        font-size: 2.5vw;
+        font-size: 1em;
         text-transform: uppercase;
         font-weight: bold;
 
@@ -82,45 +135,15 @@
     }
   }
 
+  &.category-is-open {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-size: 1.5vw;
+  }
 }
 
-/* #region History images */
-
-.presentation-highlight::after {
-  content: url("https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/mouse-click-icon.png");
-  zoom: 0.03;
-  filter: invert();
-}
-
-.presentation-highlight:hover::after {
-  background-size: cover;
-  content: "";
-  display: block;
-  width: clamp(100px, 50vw, 500px);
-  aspect-ratio: 1.5;
-  zoom: unset;
-  filter: unset;
-
-  position: absolute;
-  left: auto;
-  right: auto;
-  border-radius: 10px;
-
-
-}
-
-#history-a-star-theft:hover::after {
-  background-image: url("https://media.indiedb.com/images/members/3/2009/2008420/profile/AST_Screenshot_40.png");
-}
-
-#history-first-review:hover::after {
-  background-image: url("Images/first review.png");
-}
-
-/* #endregion */
 
 @media (width < 800px) {
-  .about-shortcuts {
+  .portfolio-shortcuts {
     grid-template-columns: 1fr;
 
     & li {

@@ -1,3 +1,4 @@
+return;
 let images = document.getElementsByClassName("background-image");
 document.getElementsByTagName("body")[0].onscroll = function parallaxBackground() {
     let scrolltotop = document.scrollingElement.scrollTop;
