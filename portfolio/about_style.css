@@ -8,10 +8,6 @@
 
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-
-  &.hidden {
-    visibility: hidden;
-  }
 }
 
 #btn-exit-portfolio {
@@ -32,7 +28,7 @@
 }
 
 #portfolio-content {
-  padding: 0px 100px;
+  padding: 0px 5vw;
   height: 100%;
 
   overflow-y: scroll;
@@ -42,6 +38,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(50px, 5vw, 300px);
+  margin-bottom: 100px;
 
   & .portfolio-artifact {
     /* border: 2px solid white; */
@@ -58,6 +55,35 @@
     h3, p {
       padding: 0 20px;
     }
+  }
+}
+
+.image-slideshow {
+  position: relative;
+}
+
+
+.slideshow-button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 13%;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  vertical-align: middle;
+  user-select: none;
+
+  text-shadow: 0px 0px 2px black;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
   }
 }
 
@@ -141,6 +167,9 @@
   }
 }
 
+.hidden {
+  display: none;
+}
 
 @media (width < 800px) {
   .portfolio-shortcuts {
@@ -153,5 +182,9 @@
     & h3 {
       font-size: 7vw !important;
     }
+  }
+
+  .portfolio-artifacts {
+    grid-template-columns: 1fr;
   }
 }
