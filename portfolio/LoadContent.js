@@ -22,8 +22,6 @@ portfolioButtons.forEach(element => {
     LoadContent("portfolio-container", filename);
     portfolioContentContainer.classList.remove("hidden");
     document.querySelector("body").classList.add("body-no-scroll");
-
-    // element.parentElement.parentElement.classList.add("category-is-open");
   });
 });
 
