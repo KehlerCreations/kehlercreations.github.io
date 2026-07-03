@@ -2,16 +2,18 @@
   <h1 class="section-heading">Programming</h1>
 
   <section class="portfolio-artifacts">
+    <!--
     <div class="portfolio-artifact">
       <img src="" alt="">
       <h3>State machine AI for Two Dollar Suits</h3>
       <p></p>
     </div>
-
+    -->
+    
     <div class="portfolio-artifact">
       <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4088370/0ad0fc31a526c7708dbf9ee84284106e6a9a379f/ss_0ad0fc31a526c7708dbf9ee84284106e6a9a379f.1920x1080.jpg?t=1772038121" alt="">
-      <h3>Destructible environment in Two Dollar Suits</h3>
-      <p></p>
+      <h3>Destructible environment for Two Dollar Suits</h3>
+      <p>Everything in Two Dollar Suits is destructible. I have developed my own system for detecting holes in walls to split colliders, leaving a gap in-between for players and NPCs to walk through. Pathfinding is updated to reflect the new available space.</p>
     </div>
     
     <div class="portfolio-artifact">
@@ -23,33 +25,65 @@
       </div>
       <h3>Advanced weather system for Walking With The Wild</h3>
       <div class="information-texts">
-        <p></p>
+        <p>Walking With The Wild features dynamic rain, wind and fog. I have built a system to change these values
+          independently. Wind effects change both rain direction and material attributes for vertex displacement. Thick fog
+          cripples vision and encourages players to use their other senses to survive.</p>
         <p>I made a custom vertex displacement shader in Unity's shader graph to handle grass and tree deformation.</p>
       </div>
     </div>
 
     <div class="portfolio-artifact">
-      <img src="" alt="">
+      <div class="image-slideshow">
+          <div class="slideshow-images">
+            <img src="Programming/Walking With The Wild/Scent Source.png" alt="">
+            <img src="Programming/Walking With The Wild/Sense config.png" alt="">
+          </div>
+      </div>
       <h3>Creature senses for Walking With The Wild</h3>
-      <p></p>
+      <div class="information-texts">
+        <p>Creatures in Walking With The Wild feature their own sense components. All creatures emit sound, scent, and make
+          vibrations in the ground. The strength of these emissions are driven by variables. Creatures also differ in how
+          sensitive they are to picking up such emissions from others.</p>
+        <p>The Spider Branch has poor eyesight, but has acute hearing, encouraging players to find alternative paths or sneak while close to this creature.</p>
+      </div>
     </div>
 
     <div class="portfolio-artifact">
-      <img src="Game Graphics/TWHS/WHS 1.png" alt="">
+      <img src="Programming/TWHS/WHS 1.png" alt="">
       <h3>Simulated limbs for The While Hole System</h3>
-      <p></p>
+      <p>The White Hole System features a limb simulation system I designed and built completely from scratch. Both the player and NPCs interface with this system move around the map. The game also features predictive foot movement for smoother traversal up and down stairs.</p>
     </div>
 
     <div class="portfolio-artifact">
-      <img src="Game Graphics/TWHS/WHS 2.png" alt="">
+      <div class="image-slideshow">
+          <div class="slideshow-images">
+            <img src="Programming/TWHS/WHS 2.png" alt="">
+            <img src="Programming/TWHS/Pathfinding Nodes.png" alt="">
+          </div>
+      </div>
       <h3>Parkour pathfinding for The While Hole System</h3>
-      <p></p>
+      <div class="information-texts">
+        <p>Since the game is built in GameMaker, which only features rudimentary built-in pathfinding options, I have integrated my own A* algorithm to enable navigation in this sidescroller parkour world. NPCs intelligently navigate from point to point, using appropriate behavior as needed, such as jumping, crouching or swinging.</p>
+        <p>Pathfinding nodes are automatically connected based on proximity and direct paths. Nodes can be connected either one-way or two-way. For example, a rooftop node may be connected to a floor node for NPCs to jump down, but they would not attempt to jump up to the rooftop from the ground.</p>
+      </div>
     </div>
 
     <div class="portfolio-artifact">
-      <img src="" alt="">
+      <div class="image-slideshow">
+          <div class="slideshow-images">
+            <img src="Programming/TWHS/Day and night.gif" alt="">
+            <img src="Programming/TWHS/building.png" alt="">
+            <img src="Programming/TWHS/HLSL Snippet.png" alt="">
+            <img src="Programming/TWHS/GML Snippet.png" alt="">
+          </div>
+      </div>
       <h3>Custom HLSL fragment shader for adjustable 2D shading</h3>
-      <p></p>
+      <div class="information-texts">
+        <p>The parallax backdrop needs to adapt to lighting conditions, so I have written my own system using simple HLSL and color maps to make this possible.</p>
+        <p>The lighting is driven by three maps. The base map is a simple color as seen on the left. Highlights are driven by the center map, which tells the engine what to highlight based on time of day. The right map selects which lights in building windows are turned on at any given time.</p>
+        <p>Above is a snippet of this code.</p>
+        <p>This process has given me insight into how textures are stored and accessed in memory.</p>
+      </div>
     </div>
 
   </section>
