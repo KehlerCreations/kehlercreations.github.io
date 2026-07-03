@@ -22,6 +22,8 @@
   scale: 2;
   background-color: rgba(0, 0, 0, 0);
   border: none;
+  
+  z-index: 20;
 }
 #background-exit-portfolio {
   position: absolute;
@@ -145,9 +147,11 @@
         text-transform: uppercase;
         font-weight: bold;
 
+        display: grid;
         position: absolute;
         text-align: center;
-        top: 38%;
+        align-items: center;
+        top: -3px;
 
         text-shadow: 1px 2px 3px black;
       }

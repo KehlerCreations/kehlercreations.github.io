@@ -21,6 +21,7 @@ portfolioButtons.forEach(element => {
     LoadContent("portfolio-container", filename);
     portfolioContentContainer.classList.remove("hidden");
     document.querySelector("body").classList.add("body-no-scroll");
+    document.querySelector("#mobile-header").classList.add("hidden-mobile-header");
     window.scrollTo(0, 0);
   });
 });
@@ -35,6 +36,7 @@ function ExitPortfolioCategory() {
   if (element != null) element.remove();
   portfolioContentContainer.classList.add("hidden");
   document.querySelector("body").classList.remove("body-no-scroll");
+  document.querySelector("#mobile-header").classList.remove("hidden-mobile-header");
 }
 
 function ScanAndAddSlideshows() {
