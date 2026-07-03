@@ -36,7 +36,7 @@ setTimeout(()=>{
   waitingElements.forEach(element => {
     element.classList.remove("wait-for-header");
   });
-}, 50)
+}, 50);
 
 // Interactive mobile button
 setTimeout(() => {
