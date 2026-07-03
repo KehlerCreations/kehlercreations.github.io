@@ -26,9 +26,9 @@ portfolioButtons.forEach(element => {
 });
 
 let btnExitPortfolio = document.querySelector("#btn-exit-portfolio");
-btnExitPortfolio.addEventListener("click", () => {
-  ExitPortfolioCategory();
-});
+btnExitPortfolio.addEventListener("click", ExitPortfolioCategory);
+let backgroundExitPortfolio = document.querySelector("#background-exit-portfolio");
+backgroundExitPortfolio.addEventListener("click", ExitPortfolioCategory);
 
 function ExitPortfolioCategory() {
   let element = document.querySelector("#portfolio-content");
