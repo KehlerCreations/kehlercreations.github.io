@@ -44,7 +44,9 @@ function ScanAndAddSlideshows() {
   artifacts.forEach(artifact => {
     let slideshow = artifact.querySelector(".image-slideshow");
     if (slideshow != null) {
-      // Hide content
+
+      //#region Hide content
+      
       let slideshowImages = slideshow.querySelector(".slideshow-images");
       let slideshowTexts = artifact.querySelector(".information-texts");
       let images = slideshowImages.children;
@@ -60,7 +62,10 @@ function ScanAndAddSlideshows() {
         texts[i].classList.add("hidden");
       }
 
-      // Add buttons
+      //#endregion
+
+      //#region Add arrow buttons
+      
       let leftButton = document.createElement("button");
       let rightButton = document.createElement("button");
       leftButton.innerText = "❮";
@@ -71,14 +76,14 @@ function ScanAndAddSlideshows() {
       slideshow.appendChild(rightButton);
 
       leftButton.addEventListener("click", () => {
-        SwitchSlide(-1);
+        NextSlide(-1);
       });
 
       rightButton.addEventListener("click", () => {
-        SwitchSlide(1);
+        NextSlide(1);
       });
 
-      function SwitchSlide(direction) {
+      function NextSlide(direction) {
         let currentSlide = slideshowImages.querySelector("[active]");
         let nextSlide = (direction === 1) ? currentSlide.nextElementSibling : currentSlide.previousElementSibling;
 
@@ -99,7 +104,56 @@ function ScanAndAddSlideshows() {
         texts[currentIndex].classList.add("hidden");
         texts[nextIndex].setAttribute("active", "true");
         texts[nextIndex].classList.remove("hidden");
+
+        // Change circle char
+        circleContainer.children[currentIndex].innerText = uncheckedChar;
+        circleContainer.children[nextIndex].innerText = checkedChar;
       }
+      //#endregion
+
+      //#region Add circle buttons
+
+      let uncheckedChar = "◯";
+      let checkedChar = "⬤";
+      let circleContainer = document.createElement("div");
+      slideshow.appendChild(circleContainer);
+      circleContainer.classList.add("circle-container");
+      for(let i=0; i<slideCount; i++) {
+        let circle = document.createElement("button");
+        circleContainer.appendChild(circle);
+        circle.classList.add("circle-button");
+
+        if(i === 0) circle.innerText = checkedChar;
+        else circle.innerText = uncheckedChar;
+
+        circle.addEventListener("click", ()=>{
+          SetSlide(i);
+        });
+      }
+
+      function SetSlide(index) {
+        let currentSlide = slideshowImages.querySelector("[active]");
+        let nextSlide = slideshowImages.children[index];
+
+        currentSlide.removeAttribute("active");
+        currentSlide.classList.add("hidden");
+        nextSlide.setAttribute("active", "true");
+        nextSlide.classList.remove("hidden");
+
+        // Set the proper text
+        let currentIndex = [...images].indexOf(currentSlide);
+        let nextIndex = [...images].indexOf(nextSlide);
+        texts[currentIndex].removeAttribute("active");
+        texts[currentIndex].classList.add("hidden");
+        texts[nextIndex].setAttribute("active", "true");
+        texts[nextIndex].classList.remove("hidden");
+
+        // Change circle char
+        circleContainer.children[currentIndex].innerText = uncheckedChar;
+        circleContainer.children[nextIndex].innerText = checkedChar;
+      }
+
+      //#endregion
     }
   });
 }

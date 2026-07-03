@@ -97,6 +97,19 @@
   }
 }
 
+.circle-container {
+  position: absolute;
+  bottom: 10px;
+  justify-self: center;
+  
+  & .circle-button {
+    background-color: transparent;
+    border: none;
+    text-shadow: 0px 0px 10px black;
+    padding: 3px;
+  }
+}
+
 #portfolio-main>section {
   width: clamp(200px, 90vw, 800px);
   justify-self: center;
