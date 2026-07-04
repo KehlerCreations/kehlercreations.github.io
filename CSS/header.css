@@ -74,6 +74,9 @@
   align-content: center;
 }
 
+.link-navbar {
+  margin-left: auto !important;
+}
 
 #header-main-bar .dropdown:hover .dropdown-content {
   display: grid;
