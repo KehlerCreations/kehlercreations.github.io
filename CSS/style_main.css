@@ -200,6 +200,14 @@ a {
     background-color: var(--Color_BG_ButtonActive);
 }
 
+.classic-hyperlink {
+  color: var(--ColorInlineLink);
+
+  &:visited {
+    color: var(--ColorInlineLink);
+  }
+}
+
 /* #endregion */
 
 /* #region Content Alignment */
