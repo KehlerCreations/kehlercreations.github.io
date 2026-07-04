@@ -76,4 +76,4 @@ setTimeout(() => {
     hideHeader();
   })
   
-}, 100)
+}, 200)

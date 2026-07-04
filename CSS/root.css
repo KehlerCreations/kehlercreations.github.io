@@ -32,5 +32,7 @@
 
     --KeyFont: Bahnschrift, Arial, Helvetica, sans-serif;
     --BaseFont: Arial, Helvetica, sans-serif;
+
+    --MobileHeaderWidth: clamp(40vw, 350px, 80vw);
     
 }
